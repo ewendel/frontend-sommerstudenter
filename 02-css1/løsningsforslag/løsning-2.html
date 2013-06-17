@@ -4,100 +4,92 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link href="styles.css" rel="stylesheet" type="text/css"/>
 		<title>BEKK</title>
 	</head>
 
 	<body>
 		<div class="container">
 			<header>
-				<h1>BEKK</h1>
+				<h1 class="center">BEKK</h1>
 				<form action="search" id="global-search">
 					<input type="search" name="query" id="search-query" placeholder="Skriv søkeord" />
 					<input type="submit"  name="search-submit" value="Søk" />
 				</form>
 			</header>
 			<nav>
-				<ul>
-					<li><a href="aktuelt.html">Aktuelt</a></li>
-					<li><a href="tjenester.html">Tjenester</a></li>
-					<li><a href="om-bekk.html">Om BEKK</a></li>
-					<li><a href="jobb.html">Jobb</a></li>
-					<li><a href="kontakt.html">Kontakt</a></li>
-				</ul>
+				<ul class="center">
+					<li class="menuElement"><a href="aktuelt.html">Aktuelt</a></li>
+					<li class="menuElement"><a href="tjenester.html">Tjenester</a></li>
+					<li class="menuElement"><a href="om-bekk.html">Om BEKK</a></li>
+					<li class="menuElement"><a href="jobb.html">Jobb</a></li>
+					<li class="menuElement"><a href="kontakt.html">Kontakt</a></li>
+				</u
 			</nav>
-			<section>
-				<img src="bilde.jpg" alt="Bilde" width="960" height="300" />
-				<ul>
-					<li><a href="#" id="">Forrige</a></li>
-					<li><a href="#" id="">Neste</a></li>
+			<section class="bigImageWrapper">
+				<img src="../../img/bg1.jpg" alt="Bilde" width="960" height="300" />
+				<ul class="imageButtonWrapper">
+					<li class="imageButton"><a href="#" id="">Forrige</a></li>
+					<li class="imageButton"><a href="#" id="">Neste</a></li>
 				</ul>
 			</section>
-			<section>
-				<h2>Har du interessen og talentet?</h2>
+			<section class="aboutUs">
+				<h2 class="center">Har du interessen og talentet?</h2>
 				
+				<header><h3>Våre tjenester</h3></header>
+
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Interactive</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Management</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Technology</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Spirit</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Idrett</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Hytter</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>Faggrupper</h2>
 					<p>Her er litt tekst</p>
 				</article>
 				<article>
-					<h2>Her er en overskrift</h2>
+					<h2>BEKK Band</h2>
 					<p>Her er litt tekst</p>
 				</article>
 			</section>
-			<section>
-				
+			<section class="news">
+				<header><h3>Nyheter</h3></header>
+
 				<article>
-					<img src="operaen-velger-bekk.jpg" width="360" height="200" alt="Operaen" />
+					<img src="../../img/small1.jpg" width="300" height="200" alt="Operaen" />
 					<h3><a title="Operaen velger BEKK" href="#">Operaen velger BEKK</a></h3>
 				</article>
 				<article>
-					<img src="nav.jpg" width="360" height="200" alt="NAV" />
+					<img src="../../img/small2.jpg" width="300" height="200" alt="NAV" />
 					<h3><a title="Bekk inngår avtale med NAV" href="#">BEKK inngår avtale med NAV</a></h3>
 				</article>
 				<article>
-					<img src="gulltaggen.jpg" width="360" height="200" alt="Gulltaggen" />
+					<img src="../../img/small3.jpg" width="300" height="200" alt="Gulltaggen" />
 					<h3><a title="Gulltaggen 2012" href="#">Gulltaggen 2012</a></h3>
-				</article>
-
-			</section>
-			<section>
-				<article>
-					<h4><a href="#">Hva kan og bør vi lære?</a></h4>
-				</article>
-				<article>
-					<h4><a href="#">Tør du sette penger på strategien din?</a></h4>
-				</article>
-				<article>
-					<h4><a href="#">Step by step from jQuery to Backbone</a></h4>
 				</article>
 			</section>
 		</div>
 		<footer>
-			<div class="container">
+			<div class="container clearfix">
 				<div>
 					<h3>Kort om BEKK</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -119,14 +111,15 @@
 				</div>
 				<div>
 					<h3>Oppgaver vi har løst</h3>
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
-					<img src="bilde.jpg" alt="Oppgave" width="100" height="100" />
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+					<img src="../../img/tiny1.jpeg" alt="Oppgave"/>
+
 				</div>
 			</div>
 		</footer>
