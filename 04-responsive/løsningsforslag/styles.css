@@ -1,0 +1,124 @@
+/* Reset */
+
+ul {
+	padding: 				0;
+	margin: 				0;
+}
+
+section:after, .clearfix:after { 
+    content: 				"."; 
+    visibility: 			hidden; 
+    display: 				block; 
+    height: 				0; 
+    clear: 					both
+}
+
+
+/* Section: Top area*/
+
+
+header, nav, section {
+	margin-bottom: 			20px;
+}
+
+
+.container {
+	width: 					960px;
+	padding: 				40px 20px;
+	margin: 				0 auto;
+	background-color: 		lightgrey;
+	position: 				relative;
+}
+
+#global-search {
+	position: 				absolute;
+	top: 					60px;
+	right: 					40px;
+}
+
+.menuElement {
+	float: 					left;
+	width: 					190px;
+	padding: 				20px 0;
+	border: 				1px solid black;
+	list-style: 			none;
+}
+
+
+/* Section: Image */
+
+/* Must be set in order to position: absolute to work on children elements */
+.bigImageWrapper {
+	position: 				relative;
+}
+
+.imageButtonWrapper {
+	position: 				absolute;
+	right: 					20px;
+	bottom: 				20px;
+}
+
+.imageButton {
+	list-style: 			none;
+	padding: 				10px 20px;
+	display: 				inline-block;
+	background-color: 		white;
+}
+
+/* Section: Articles */
+
+article {
+	float: 					left;
+}
+
+.aboutUs article {
+	width: 					220px;
+	padding: 				10px;
+}
+
+.news article {
+	margin-right: 			30px;
+	text-align: 			center;
+}
+
+.news article:last-of-type {
+	margin-right: 0px;
+}
+
+/* Section: Footer */
+
+footer .container div {
+	float: 					left;
+	width: 					33%;
+}
+
+
+/* Generic */
+
+.center {
+	text-align: 			center;
+}
+
+section header {
+	text-align: center;
+}
+
+section header h3 {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+
+/* Responsive */
+
+@media all and (max-width: 1000px) {
+    .container {
+        width:			auto;
+    }
+
+    .bigImageWrapper img {
+    	max-width: 		100%;
+    }
+    
+}
+
