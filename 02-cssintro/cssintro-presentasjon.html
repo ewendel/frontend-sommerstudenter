@@ -38,6 +38,8 @@
       .slide .overlay h1 > span {background:transparent !important;}
       .slide .overlay h1:before {border-top:none !important;}
 
+      .overlay {position:absolute;left:0;right:0;top:75%;z-index:999;background:rgba(0,0,0,.75);}
+
       .css-example {border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;}
       .css-example .pbox {width:100px;height:100px;line-height: 2;text-align: center;font-size: 3em}
       .css-example .pbox:nth-child(2) {color:red;}
@@ -179,6 +181,15 @@
 
 # INTRODUKSJON TIL CSS
 
+
+---
+
+.middle.center
+
+HTML beskriver strukturen og innholdet til en nettside.
+
+CSS beskriver derimot hvordan innholdet *ser ut*.
+
 ---
 
 .middle.center.fullscreen
@@ -188,29 +199,9 @@
 
 ---
 
-
 .middle.center.fullscreen
 
 ![NTNU](../img/101/ntnu-style-on.png)
-
-
----
-
-.middle.center
-
-![iOS CSS Icons](../img/cssicons.png)
-
-[graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
-
----
-
-.middle.center
-
-![Opera Logo](../img/opera.png)
-
-[v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
-
-
 
 ---
 #css
@@ -218,37 +209,6 @@
     .css
     selector {property:value}
 
----
-
-# CSS properties
-<!--
-    .css
-    selector {property:value}
-
-&nbsp;-->
-
-    .css
-    selector {        
-        background: #f00;                       /* Bakgrunn */
-
-        font-size:20px;                         /* Tekst */
-        line-height:1.5;
-
-        border: 1px solid red;                  /* Kanter */
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        
-        height:20px;                            /* Dimensjoner */
-        width:30px;
-
-        float:left;                             /* Posisjon */
-        position:absolute;
-        top:10px;
-        left:25px;
-
-        margin:10px;                            /* Spacing */
-        padding: 10px 0;
-    }
 
 ---
 #css selectors
@@ -274,7 +234,7 @@
 
     #id
 
-    #id .class element              /*kombinasjon av forskjellige selektorer*/
+    #id .class element              /*nøsting av forskjellige selektorer*/
 
     .class1.class2 .class3          /*?*/
 
@@ -298,9 +258,508 @@
 [https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors](https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors)
 
 ---
-.center.middle
 
-##Hva om flere selektorer sloss om samme element?
+.middle.center
+
+# Layout i CSS
+
+---
+
+# CSS layout properties
+
+    .css
+    selector {        
+        height: 20px;                            /* Dimensjoner */
+        width: 30px;
+
+        position: absolute;                      /* Posisjonering */
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+
+        display: inline;                         /* Dokumentflyt */
+
+        float: left;
+
+        margin: 10px 10px 10px 10px;             /* Spacing */
+        padding: 10px 10px 10px 10px;
+        border: 1px solid black;
+        outline: 1p solid yellow;
+
+        text-align: center;                      /* Horisontal alignment */
+
+        vertical-align: middle:                  /* Vertikal alignment */
+    }
+
+
+---
+
+.middle.fullscreen
+
+
+
+![Boxes](../img/101/boxes.jpg)
+<div class="" style="position:absolute;top:5%;left:5%;">
+<h1>&nbsp;CSS Box Model&nbsp;</h1>
+</div>
+
+
+<!--https://developer.mozilla.org/en-US/docs/CSS/box_model-->
+<div class="source">
+http://flic.kr/p/7v9E6p
+</div>
+
+---
+.whitebg
+
+
+<span class="hl-text">Box model</span>
+
+
+    .css
+     div { width: 180px}
+
+&nbsp;
+
+<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;margin:0 auto; margin-top:100px">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+
+
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px} /* Ny bredde: 180 + 40 + 40 = 260 */
+
+&nbsp;
+
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;margin-top:60px;background:rgba(241, 255, 131, 1)">
+<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+
+
+
+
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px; border: 10px} /* Ny bredde: 260 + 10 + 10 = 280*/
+
+&nbsp;
+
+
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;margin-top:50px;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
+
+&nbsp;
+
+<div style="width:282px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+</div>
+
+---
+
+.middle.center.fullscreen
+
+![Escalator](../img/catbox.jpg)
+<div class="overlay" style="top: 70%">
+<blockquote>
+  BOX-SIZING
+</blockquote>
+</div>
+
+<div class="source">
+http://www.mrwallpaper.com/wallpapers/Cat-Box.jpg
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
+
+&nbsp;
+
+<div style="width:282px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+</div>
+
+---
+
+.middle.center.fullscreen
+
+
+
+<div class="" style="position:absolute;top:20%;right:17%;">
+<h1>&nbsp;Floating&nbsp;</h1>
+</div>
+
+![Float](../img/101/css-rubber-ducks.jpg)
+
+<div class="source">
+http://flic.kr/p/a6okjV
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Eksempel</span>
+
+    .css
+    img {}
+
+<div style="border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;">
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;"/>
+<h3>Pusekatt brakk</h3>
+<p>
+En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
+</p>
+
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Eksempel</span>
+
+    .css
+    img {float:left}
+  
+
+<div class="css-example">
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:left;"/>
+<h3>Pusekatt brakk</h3>
+<p>
+En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
+</p>
+
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Eksempel</span>
+
+    .css
+    img {float:right}
+  
+
+<div class="css-example">
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:right;"/>
+<h3>Pusekatt brakk</h3>
+<p>
+En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
+</p>
+
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Floating layout</span>
+
+    .css
+    article, aside {margin-bottom:10px}
+
+<div class="css-example" style=""> 
+   <div style="padding:20px; background: #f5dcdc; margin-bottom:10px">&lt article/ &gt;</div>
+   <div style="padding:20px; background: #f5dcdc; margin-bottom: 10px">&lt aside/ &gt;</div>
+   <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Floating layout</span>
+
+    .css
+    article {width:400px; margin-bottom: 10px; float: left}
+
+    aside   {width:200px; margin-bottom: 10px; float: right}
+  
+
+<div class="css-example" style=""> 
+   <div style="padding:20px; background: #f5dcdc; margin:0 10px 10px 0;float:left;width:410px">
+   <h3>Pusekatt brakk</h3>
+<p>
+En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
+</p>
+    </div>
+   <div style="padding:20px; background: #f5dcdc; margin:0 0 10px 0; width:210px; float:right">&lt aside/ &gt;</div>
+   <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
+
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Clearing float</span>
+
+    .css
+    article {width:400px; margin-bottom: 10px; float: left}
+
+    aside   {width:200px; margin-bottom: 10px; float: right}
+
+    footer {clear: both}
+  
+
+<div class="css-example">
+   <div style="padding:20px; background: #f5dcdc; margin:0 10px 10px 0;float:left;width:410px">
+   <h3>Pusekatt brakk</h3>
+<p>
+En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
+</p>
+    </div>
+   <div style="padding:20px; background: #f5dcdc; margin:0 0 10px 0; width:210px; float:right">&lt aside/ &gt;</div>
+   <div style="padding:20px; background: #dcf5dc;clear:both">&lt footer/ &gt;</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Collapse</span>
+
+    .css
+    article {margin-right: 10px; float:left}
+
+<div class="css-example" style="">
+   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Clearfix</span>
+
+    .css
+    .container:after { 
+        content: "."; 
+        visibility: hidden; 
+        display: block; 
+        height: 0; 
+        clear: both
+    }
+
+    article {margin-right: 10px; float:left}   
+
+<div class="css-example css-eaxample-clear">
+<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
+</div>
+
+<!-- 
+
+http://css.maxdesign.com.au/floatutorial/introduction.htm
+http://alistapart.com/article/css-floats-101
+http://css-tricks.com/all-about-floats/
+http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/
+-->
+
+---
+.middle.fullscreen.higher
+
+
+
+![CSS](../img/101/css-position-misplaced.jpg)
+
+<div class="" style="position:absolute;top:9%;left:3%;">
+<h1>Position</h1>
+</div>
+
+
+<div class="source">
+http://flic.kr/p/2yYGP
+</div>
+<!-- http://alistapart.com/article/css-positioning-101 -->
+
+---
+.whitebg
+
+<span class="hl-text">Static</span>
+
+    .css
+    .box { 
+        position: static; /* Default */
+        width: 100px; 
+        height: 100px
+    }
+
+<div class="css-example">
+    <div class="pbox" style="background:#f5dcdc">A</div>
+    <div class="pbox" style="background:#dcf5dc">B</div>
+    <div class="pbox" style="background:#44accf">C</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Relative</span>
+
+    .css
+    .box { 
+        position: static; /* Default */
+        width: 100px; 
+        height: 100px
+       }
+    .box:nth-child(2) { 
+        position:relative; 
+        left: 80px;
+        top: 20px
+      }
+
+<div class="css-example">
+    <div class="pbox" style="background:#f5dcdc">A</div>
+    <div class="pbox" style="background:#dcf5dc;position:relative; left: 80px; top:20px">B</div>
+    <div class="pbox" style="background:#44accf">C</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Absolute</span>
+
+    .css
+    .box { 
+        position: static; /* Default */
+        width: 100px; 
+        height: 100px
+       }
+    .box:nth-child(2) { 
+        position:absolute; 
+        right: 0;
+        top: 0
+      }
+
+<div class="css-example">
+    <div class="pbox" style="background:#f5dcdc">A</div>
+    <div class="pbox" style="background:#dcf5dc;position:absolute; right: 0; top:0">B</div>
+    <div class="pbox" style="background:#44accf">C</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Absolute</span>
+
+    .css
+    .container {
+        position:relative;
+        }
+    .box { 
+        position: static; /* Default */
+        width: 100px; 
+        height: 100px
+       }
+    .box:nth-child(2) { 
+        position:absolute; 
+        right: 0;
+        top: 0
+      }
+
+<div class="css-example" style="position:relative">
+    <div class="pbox" style="background:#f5dcdc">A</div>
+    <div class="pbox" style="background:#dcf5dc;position:absolute; right: 0; top:0">B</div>
+    <div class="pbox" style="background:#44accf">C</div>
+</div>
+
+---
+.whitebg
+
+<span class="hl-text">Fixed</span>
+
+    .css
+    div:first-child {
+        position: fixed;
+        z-index: 2
+    }
+
+<div class="css-example" style="overflow:auto;height:150px;">
+    <div class="" style="background:#f5dcdc;position:fixed;z-index:2"><h2>1 (fixed)</h2></div>
+   ##2
+   ##3
+   ##4
+   ##5
+   ##6
+</div>
+
+
+
+---
+.whitebg
+
+<span class="hl-text" style="z-idex:1">Awesome</span>
+
+    .css
+    .lightbox {
+        position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba (0,0,0,.65)
+    }
+    .lightbox div {
+        position:absolute;top:30%;left:50%;margin-left:-208px;box-shadow: 10px 10px 10px
+    }
+
+<div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
+
+<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
+![Css is awesome](../img/101/css-awesome.jpg)
+</div>
+</div>
+
+---
+  
+.middle.center.fullscreen
+
+![drunkoctopus](../img/catfight.jpg)
+
+<div class="overlay" style="top: 70%">
+<blockquote>
+Hva hvis flere selektorer slåss om samme element?
+</blockquote>
+</div>
+
+<div class="source">
+http://4.bp.blogspot.com/_98lRv3X-wZ0/S6oqqpjJqmI/AAAAAAAAADI/a8Es6Lc_hes/s1600/funny-cat-fight.jpg
+</div>
+
+
 
 ---
 
@@ -808,443 +1267,25 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
 
 .middle.center
 
-#Layout i CSS
-
----
-
-.middle.fullscreen
-
-
-
-![Boxes](../img/101/boxes.jpg)
-<div class="" style="position:absolute;top:5%;left:5%;">
-<h1>&nbsp;CSS Box Model&nbsp;</h1>
-</div>
-
-
-<!--https://developer.mozilla.org/en-US/docs/CSS/box_model-->
-<div class="source">
-http://flic.kr/p/7v9E6p
-</div>
-
----
-.middle.center.whitebg
-
-![CSS box model](../img/101/css-box-model.jpg)
-
-
-<div class="source">
-http://flic.kr/p/49K6ZF
-</div
-
----
-.whitebg
-
-
-<span class="hl-text">Box model</span>
-
-
-    .css
-     div { width: 180px}
-
-&nbsp;
-
-<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;margin:0 auto; margin-top:100px">
-Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
-</div>
-
-
-
----
-.whitebg
-
-<span class="hl-text">Box model</span>
-
-    .css
-     div { width: 180px; padding:40px} /* Ny bredde: 180 + 40 + 40 = 260 */
-
-&nbsp;
-
-<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;margin-top:60px;background:rgba(241, 255, 131, 1)">
-<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
-Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
-</div>
-</div>
-
-
-
-
-
----
-.whitebg
-
-<span class="hl-text">Box model</span>
-
-    .css
-     div { width: 180px; padding:40px; border: 10px} /* Ny bredde: 260 + 10 + 10 = 280*/
-
-&nbsp;
-
-
-<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;margin-top:50px;background:rgba(241, 255, 131, 1);border:10px solid;">
-<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
-Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
-</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Box model</span>
-
-    .css
-     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
-
-&nbsp;
-
-<div style="width:282px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
-<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
-<div class="border-box bb-content" style="width:180px;height:180px;border:1px solid;">
-Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
-</div>
-</div>
-</div>
-
-
----
-.middle.center.fullscreen
-
-
-
-<div class="" style="position:absolute;top:20%;right:17%;">
-<h1>&nbsp;Floating&nbsp;</h1>
-</div>
-
-![Float](../img/101/css-rubber-ducks.jpg)
-
-<div class="source">
-http://flic.kr/p/a6okjV
-</div>
-
-
----
-.whitebg
-
-<span class="hl-text">Eksempel</span>
-
-    .css
-    img {}
-
-<div style="border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;"/>
-<h3>Pusekatt brakk</h3>
-<p>
-En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
-</p>
-
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Eksempel</span>
-
-    .css
-    img {float:left}
-  
-
-<div class="css-example">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:left;"/>
-<h3>Pusekatt brakk</h3>
-<p>
-En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
-</p>
-
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Eksempel</span>
-
-    .css
-    img {float:right}
-  
-
-<div class="css-example">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:right;"/>
-<h3>Pusekatt brakk</h3>
-<p>
-En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
-</p>
-
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Floating layout</span>
-
-    .css
-    article, aside {margin-bottom:10px}
-
-<div class="css-example" style=""> 
-   <div style="padding:20px; background: #f5dcdc; margin-bottom:10px">&lt article/ &gt;</div>
-   <div style="padding:20px; background: #f5dcdc; margin-bottom: 10px">&lt aside/ &gt;</div>
-   <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
-</div>
-
-
----
-.whitebg
-
-<span class="hl-text">Floating layout</span>
-
-    .css
-    article {width:400px; margin-bottom: 10px; float: left}
-
-    aside   {width:200px; margin-bottom: 10px; float: right}
-  
-
-<div class="css-example" style=""> 
-   <div style="padding:20px; background: #f5dcdc; margin:0 10px 10px 0;float:left;width:410px">
-   <h3>Pusekatt brakk</h3>
-<p>
-En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
-</p>
-    </div>
-   <div style="padding:20px; background: #f5dcdc; margin:0 0 10px 0; width:210px; float:right">&lt aside/ &gt;</div>
-   <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
-
-</div>
-
-
----
-.whitebg
-
-<span class="hl-text">Clearing float</span>
-
-    .css
-    article {width:400px; margin-bottom: 10px; float: left}
-
-    aside   {width:200px; margin-bottom: 10px; float: right}
-
-    footer {clear: both}
-  
-
-<div class="css-example">
-   <div style="padding:20px; background: #f5dcdc; margin:0 10px 10px 0;float:left;width:410px">
-   <h3>Pusekatt brakk</h3>
-<p>
-En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
-</p>
-    </div>
-   <div style="padding:20px; background: #f5dcdc; margin:0 0 10px 0; width:210px; float:right">&lt aside/ &gt;</div>
-   <div style="padding:20px; background: #dcf5dc;clear:both">&lt footer/ &gt;</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Collapse</span>
-
-    .css
-    article {margin-right: 10px; float:left}
-
-<div class="css-example" style="">
-   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-   <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-</div>
-
-
----
-.whitebg
-
-<span class="hl-text">Clearfix</span>
-
-    .css
-    .container:after { 
-        content: "."; 
-        visibility: hidden; 
-        display: block; 
-        height: 0; 
-        clear: both
-    }
-
-    article {margin-right: 10px; float:left}   
-
-<div class="css-example css-eaxample-clear">
-<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-<div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
-</div>
-
-<!-- 
-
-http://css.maxdesign.com.au/floatutorial/introduction.htm
-http://alistapart.com/article/css-floats-101
-http://css-tricks.com/all-about-floats/
-http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/
--->
-
----
-.middle.fullscreen.higher
-
-
-
-![CSS](../img/101/css-position-misplaced.jpg)
-
-<div class="" style="position:absolute;top:9%;left:3%;">
-<h1>Position</h1>
-</div>
-
-
-<div class="source">
-http://flic.kr/p/2yYGP
-</div>
-<!-- http://alistapart.com/article/css-positioning-101 -->
-
----
-.whitebg
-
-<span class="hl-text">Static</span>
-
-    .css
-    .box { 
-        position: static; /* Default */
-        width: 100px; 
-        height: 100px
-    }
-
-<div class="css-example">
-    <div class="pbox" style="background:#f5dcdc">A</div>
-    <div class="pbox" style="background:#dcf5dc">B</div>
-    <div class="pbox" style="background:#44accf">C</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Relative</span>
-
-    .css
-    .box { 
-        position: static; /* Default */
-        width: 100px; 
-        height: 100px
-       }
-    .box:nth-child(2) { 
-        position:relative; 
-        left: 80px;
-        top: 20px
-      }
-
-<div class="css-example">
-    <div class="pbox" style="background:#f5dcdc">A</div>
-    <div class="pbox" style="background:#dcf5dc;position:relative; left: 80px; top:20px">B</div>
-    <div class="pbox" style="background:#44accf">C</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Absolute</span>
-
-    .css
-    .box { 
-        position: static; /* Default */
-        width: 100px; 
-        height: 100px
-       }
-    .box:nth-child(2) { 
-        position:absolute; 
-        right: 0;
-        top: 0
-      }
-
-<div class="css-example">
-    <div class="pbox" style="background:#f5dcdc">A</div>
-    <div class="pbox" style="background:#dcf5dc;position:absolute; right: 0; top:0">B</div>
-    <div class="pbox" style="background:#44accf">C</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Absolute</span>
-
-    .css
-    .container {
-        position:relative;
-        }
-    .box { 
-        position: static; /* Default */
-        width: 100px; 
-        height: 100px
-       }
-    .box:nth-child(2) { 
-        position:absolute; 
-        right: 0;
-        top: 0
-      }
-
-<div class="css-example" style="position:relative">
-    <div class="pbox" style="background:#f5dcdc">A</div>
-    <div class="pbox" style="background:#dcf5dc;position:absolute; right: 0; top:0">B</div>
-    <div class="pbox" style="background:#44accf">C</div>
-</div>
-
----
-.whitebg
-
-<span class="hl-text">Fixed</span>
-
-    .css
-    div:first-child {
-        position: fixed;
-        z-index: 2
-    }
-
-<div class="css-example" style="overflow:auto;height:150px;">
-    <div class="" style="background:#f5dcdc;position:fixed;z-index:2"><h2>1 (fixed)</h2></div>
-   ##2
-   ##3
-   ##4
-   ##5
-   ##6
-</div>
-
-
-
----
-.whitebg
-
-<span class="hl-text" style="z-idex:1">Awesome</span>
-
-    .css
-    .lightbox {
-        position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba (0,0,0,.65)
-    }
-    .lightbox div {
-        position:absolute;top:30%;left:50%;margin-left:-208px;box-shadow: 10px 10px 10px
-    }
-
-<div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
-
-<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
-![Css is awesome](../img/101/css-awesome.jpg)
-</div>
-</div>
+![Really do](../img/really.jpeg)
 
 ---
 
 .middle.center
 
-![Really do](../img/really.jpeg)
+![iOS CSS Icons](../img/cssicons.png)
+
+[graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
 
 ---
 
+.middle.center
+
+![Opera Logo](../img/opera.png)
+
+[v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
+
+---
 
 # Oppgave
 

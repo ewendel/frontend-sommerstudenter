@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lynkurs i webutvikling</title>
+    <title>Responsive: FrontendSommer</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -62,6 +62,15 @@
 ![Finn.no Stats](../img/finn.stats.device.png)
 
 [labs.finn.no](http://labs.finn.no/)
+
+---
+
+.middle.center
+
+![Finn.no Stats](../img/responsivewebdesignfront.png)
+
+[ethanmarcotte.com](http://etchanmarcotte.com/)
+
 
 ---
 
@@ -129,7 +138,7 @@ design som skalerer
 
 # Hva er context?
 
-default font size
+Default fontstørrelse
 
     .css 
         html {
@@ -142,7 +151,7 @@ default font size
 
 # Margins
 
-Når man beregner marginer, er det størrelsen på containeren til elementet du setter marginen på som er context
+context = størrelsen på forelderen til elementet
 
 .css
     #parent {
@@ -156,7 +165,7 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
 
 # Margins 2
 
-Når man beregner marginer, er det størrelsen på containeren til elementet du setter marginen på som er context
+context = størrelsen på forelderen til elementet
 
 .css
     #parent {
@@ -166,7 +175,7 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
         margin: 35px;
     }
 
-->
+
 
     #parent {
         width: 200px;
@@ -179,7 +188,7 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
 
 # Padding
 
-Når man beregner padding, er det størrelsen på elementet du setter padding på som er context
+context = størrelsen på elementet selv
 
 .css
     #site {
@@ -191,7 +200,7 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
 
 # Padding 2
 
-Når man beregner padding, er det størrelsen på elementet du setter padding på som er context
+context = størrelsen på elementet
 
 .css
     #site {
@@ -199,7 +208,7 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
         padding: 20px;
     }
 
-->
+
 
     #site {
         width: 540px;
@@ -223,6 +232,21 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
     img {
         max-width: 100%
     }
+
+---
+
+# Flexible Media
+
+1. Bruk større bilder
+2. Bruk max-width for å styre størrelsen
+
+
+    img {
+        max-width: 100%
+    }
+
+
+### ... en sannhet med modifikasjoner
 
 ---
 
@@ -319,20 +343,75 @@ Basically; hvis stor skjerm, så stor skjerm-css.
 
 ---
 
-#Oppgaver
+# Oppgave
+
+## Bruk media queries til å <a href="oppgave/design-desktop.jpg">responsifisere siden</a>
+
+## frontendsommer/04-responsive/oppgave/
+
+---
+
+# Oppgave
+  
+  ## 1) Grunnleggende
+
+  Finn ut ved hvilken skjermbredde containeren fyller skjermen, og:
+
+  * Sett bredden på container til å følge bredden til skjermen
+  * Sett maxbredden til det store bildet til 100%
+
+---
+
+# Oppgave 
+
+  ## 2) Tilpasning av innhold
+
+#### Våre tjenester
+
+  * Finn ut når det blir for trang til fire i bredden
+  * Bytt til to og to
+
+#### Selvskryt
+
+  * Fjernes når det ikke er plass til tre i bredden
+
+#### Søkefelt
+
+  * Skjul når det ikke er plass
 
 
-1. 
+---
 
-2.
+# Oppgave 
 
-3.
+  ## 3) Tilpasning av menyen
 
-4.
+  Når menyelementene ikke lenger har plass:
 
-5.
+  * Skjul menyelementene
+  * Vis den alternative menyen som ligger skjult i DOM-en
 
-6.
+---
+
+# Oppgave 
+
+  ## 4) Mer tilpasning av innhold 
+
+  * Finn ut når det ikke lenger er plass til to artikler i bredden og bytt til én
+  * Fjern forrige/neste-knappene
+
+---
+
+# Oppgave 
+
+  ## 5) Gjør noe fett!
+
+  * Du bestemmer.
+
+    </textarea>
+    <div id="slideshow"></div>
+  </body>
+</html>
 
     </textarea>
     <div id="slideshow"></div>
