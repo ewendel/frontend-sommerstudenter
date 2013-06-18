@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Frontend 101</title>
+    <title>CSS: FrontendSommer</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
     <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>    
     <style type="text/css" media="screen">
       #slideshow .slide .content.front-page h1 { width: 100%; }
       .slide p { padding: 0; margin: 1.1em 0; }
@@ -40,39 +42,120 @@
       .css-example .pbox {width:100px;height:100px;line-height: 2;text-align: center;font-size: 3em}
       .css-example .pbox:nth-child(2) {color:red;}
       .css-example .pbox:nth-child(3) {color:white;}
-      .css-eaxample-clear:after, .group:after { 
-   content: ""; 
-   visibility: hidden; 
-   height: 0; 
-   display: block; 
-   clear: both;
-}
+      .css-example-clear:after, .group:after {
+		   content: "";
+		   visibility: hidden;
+		   height: 0;
+		   display: block;
+		   clear: both;
+		}
 
-.specificity {display:inline-block;}
-.specificity tbody {background:#fff;color:#000;}
-.specificity td { height:120px;width:60px;padding:20px;border:4px solid #ccc;color:000;font-size:2em;text-align:center;
-2
-background: -moz-linear-gradient(top, rgba(0,0,0,0.16) 0%, #FDF6E3 49%, rgba(0,0,0,0.12) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.16)), color-stop(49%,#FDF6E3), color-stop(100%,rgba(0,0,0,0.12))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#1f000000',GradientType=0 ); /* IE6-9 */
+		.specificity {display:inline-block;}
+		.specificity tbody {background:#fff;color:#000;}
+		.specificity td { height:120px;width:60px;padding:20px;border:4px solid #ccc;color:000;font-size:2em;text-align:center;
+		2
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.16) 0%, #FDF6E3 49%, rgba(0,0,0,0.12) 100%); /* FF3.6 */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.16)), color-stop(49%,#FDF6E3), color-stop(100%,rgba(0,0,0,0.12))); /* Chrome,Safari4 */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* Chrome10,Safari5.1 */
+		background: -o-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* Opera 11.10 */
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* IE10 */
+		background: linear-gradient(to bottom, rgba(0,0,0,0.16) 0%,#FDF6E3 49%,rgba(0,0,0,0.12) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#1f000000',GradientType=0 ); /* IE6-9 */
 
-}
+		}
 
+		.gradient { background-image:-webkit-linear-gradient(red, green, blue, purple, orange); }
+
+		.gradient * { color:#fff !important; }
+
+		.middle.center h1 span { background:none !important; }
+
+		.middle.center.shadow { background:#333; text-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+		.middle.center.shadow .shadow1 { background: #444; padding:1em; box-shadow:0 2px 3px rgba(0,0,0,0.2); }
+
+		.caniuse { background: #ede1cc !important; }
+
+		a.two { font-size:3em; display: block; text-align: left; color:#fff !important; line-height: 1.3; }
+
+		.spinners {
+		    width:500px;
+		    height:600px;
+		    margin:0 auto;
+		    position: relative;
+		}
+
+		.anim-steps .spinners {
+		    height:250px;
+		}
+
+		.spinner1 {
+		    position: absolute;
+		    top:50%;
+		    left:50%;
+		    margin:-80px 0 0 -80px;
+
+		    border:20px solid #228fd3;
+		    border-right:20px solid #000;
+		    border-left:20px solid #000;
+		    border-radius:160px;
+		    width:160px;
+		    height:160px;
+		    -webkit-animation:rotation 2s infinite linear;
+		    -moz-animation:rotation 2s infinite linear;
+		    -ms-animation:rotation 2s infinite linear;
+		    -o-animation:rotation 2s infinite linear;
+		    animation:rotation 2s infinite linear;
+		}
+
+		.spinner2 {
+		    position: absolute;
+		    top:50%;
+		    left:50%;
+		    margin:-40px 0 0 -40px;
+		    border:20px solid #228fd3;
+		    border-right:20px solid #000;
+		    border-left:20px solid #000;
+		    border-radius:80px;
+		    width:80px;
+		    height:80px;
+		    -webkit-animation:rotation2 2s infinite linear;
+		    -moz-animation:rotation2 2s infinite linear;
+		    -ms-animation:rotation2 2s infinite linear;
+		    -o-animation:rotation2 2s infinite linear;
+		    animation:rotation2 2s infinite linear;
+		}
+
+		@-webkit-keyframes rotation {
+		    from { -webkit-transform: rotate(0deg); }
+		    to { -webkit-transform: rotate(359deg); }
+		}
+
+		@-webkit-keyframes rotation2 {
+		    from { -webkit-transform: rotate(0deg); }
+		    to { -webkit-transform: rotate(-359deg); }
+		}
+
+		.fs { font-size:1.6em; }
+		.f1 { font-family: 'Snowburst One', cursive; }
+		.f2 { font-family: 'Griffy', cursive; }
+
+		.invert { background:#fff; }
+		.imgtranslate img { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+		iframe { border:none; }
+		.anim a { -webkit-transition: color 200ms ease-in-out; display: block; font-size: 3em; text-align: center; margin:1em 0; }
+		.anim a:hover { color:#fff !important; text-decoration: none !important; }
+		.imganim img { -webkit-transition: all 300ms ease-in-out; }
+		.imganim img:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
     </style>
   </head>
   <body>
     <textarea id="source">
 
-
 .middle.center
 
 .middle.fullscreen
 
-![CSS](img/101/css-gangnam.jpg)
+![CSS](../img/101/css-gangnam.jpg)
 <div class="" style="position:absolute;top:5%;left:5%;-webkit-transform:rotate(-17deg);-moz-transform:rotate(-17deg);transform:rotate(-17deg)">
 <h1>&nbsp;CSS&nbsp;</h1>
 </div>
@@ -82,9 +165,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', e
 
 ---
 
+.agenda
+
+# Agenda
+
+* Introduksjon
+* Layout
+* Oppgave
+* Design
+* Oppgave
+
+---
+
+.middle.center
+
+# INTRODUKSJON TIL CSS
+
+---
+
 .middle.center.fullscreen
 
-![NTNU](img/101/ntnu-style-off.png)
+![NTNU](../img/101/ntnu-style-off.png)
 
 
 ---
@@ -92,14 +193,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', e
 
 .middle.center.fullscreen
 
-![NTNU](img/101/ntnu-style-on.png)
+![NTNU](../img/101/ntnu-style-on.png)
 
 
 ---
 
 .middle.center
 
-![iOS CSS Icons](img/cssicons.png)
+![iOS CSS Icons](../img/cssicons.png)
 
 [graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
 
@@ -107,7 +208,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', e
 
 .middle.center
 
-![Opera Logo](img/opera.png)
+![Opera Logo](../img/opera.png)
 
 [v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
 
@@ -208,7 +309,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', e
 .middle.fullscreen
 
 
-![](img/101/two_cats_and_black_mouse.jpg)
+![](../img/101/two_cats_and_black_mouse.jpg)
 
 <div class="" style="position:absolute;top:5%;left:5%;">
 <h1>&nbsp;Hvem vinner?&nbsp;</h1>
@@ -675,6 +776,8 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
 
 
 ---
+
+
 #specificity quiz
 
     .css
@@ -701,11 +804,18 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
        
 
 ---
+
+.middle.center
+
+#Layout i CSS
+
+---
+
 .middle.fullscreen
 
 
 
-![Boxes](img/101/boxes.jpg)
+![Boxes](../img/101/boxes.jpg)
 <div class="" style="position:absolute;top:5%;left:5%;">
 <h1>&nbsp;CSS Box Model&nbsp;</h1>
 </div>
@@ -719,7 +829,7 @@ http://flic.kr/p/7v9E6p
 ---
 .middle.center.whitebg
 
-![CSS box model](img/101/css-box-model.jpg)
+![CSS box model](../img/101/css-box-model.jpg)
 
 
 <div class="source">
@@ -809,7 +919,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <h1>&nbsp;Floating&nbsp;</h1>
 </div>
 
-![Float](img/101/css-rubber-ducks.jpg)
+![Float](../img/101/css-rubber-ducks.jpg)
 
 <div class="source">
 http://flic.kr/p/a6okjV
@@ -825,7 +935,7 @@ http://flic.kr/p/a6okjV
     img {}
 
 <div style="border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;">
-    <img src="img/101/css-rubber-duck.jpg" style="width:30%;height:auto;"/>
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;"/>
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -843,7 +953,7 @@ En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig 
   
 
 <div class="css-example">
-    <img src="img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:left;"/>
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:left;"/>
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -861,7 +971,7 @@ En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig 
   
 
 <div class="css-example">
-    <img src="img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:right;"/>
+    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:right;"/>
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -982,7 +1092,7 @@ http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should
 
 
 
-![CSS](img/101/css-position-misplaced.jpg)
+![CSS](../img/101/css-position-misplaced.jpg)
 
 <div class="" style="position:absolute;top:9%;left:3%;">
 <h1>Position</h1>
@@ -1122,7 +1232,7 @@ http://flic.kr/p/2yYGP
 <div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
 
 <div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
-![Css is awesome](img/101/css-awesome.jpg)
+![Css is awesome](../img/101/css-awesome.jpg)
 </div>
 </div>
 
@@ -1130,25 +1240,25 @@ http://flic.kr/p/2yYGP
 
 .middle.center
 
-![Really do](img/really.jpeg)
+![Really do](../img/really.jpeg)
 
 ---
 .middle.center.whitebg
 
-![Usage share of web browsers](img/101/usage-share-browsers.svg)
+![Usage share of web browsers](../img/101/usage-share-browsers.svg)
 
 ---
 .middle.center.fullscreen
 
 
-![best viewed](img/101/browser-best-viewed.jpg)
+![best viewed](../img/101/browser-best-viewed.jpg)
 
 ---
 .whitebg
 
 <span class="hl-text" style="z-idex:1">Graceful degradation</span>
 
-![no flash](img/101/browser-noflash.jpeg)
+![no flash](../img/101/browser-noflash.jpeg)
 
 
 ---
@@ -1174,7 +1284,7 @@ http://flic.kr/p/2yYGP
 
 .middle.center.fullscreen
 
-![Escalator](img/101/browser-escalator.jpeg)
+![Escalator](../img/101/browser-escalator.jpeg)
 
 <div class="source">
 http://flic.kr/p/wzHU
@@ -1184,7 +1294,7 @@ http://flic.kr/p/wzHU
 
 .middle.center.fullscreen
 
-![Escalator](img/101/browser-escalator.jpeg)
+![Escalator](../img/101/browser-escalator.jpeg)
 <div class="overlay">
 <blockquote>
     An escalator can never break, <br />
@@ -1203,7 +1313,7 @@ http://flic.kr/p/wzHU
 
 
 
-![Understanding progressive enhancement](img/101/browser-layered-cake.jpeg)
+![Understanding progressive enhancement](../img/101/browser-layered-cake.jpeg)
 
 <div class="source">
 http://www.alistapart.com/articles/understandingprogressiveenhancement/
@@ -1223,43 +1333,586 @@ TODO
 
 ---
 
-#Oppgave
+.middle.center
 
-<div class="group">
-<div style="float:left;width:50%;margin-right:5%">
-   Last ned <a href="https://github.com/olav/frontend101" target="_blank">kurset fra Github</a> (ZIP) og åpne filene for oppgaven under del 1. 
+# DESIGN I CSS
 
-   Du skal jobbe med index.html og main.css.
+---
 
-<h3>Oppgave</h3>
-Utgangspunkt er bilde 1. Ønsket design er bilde 2. 
+.agenda
 
-Menypunktene skal listes ut horisontalt på mørk bakgrunn. Teksten og linja over skal bytte farge på :hover. Linja skal da bli grå, mens teksten skal bli hvit.
+# DESIGN I CSS
 
-<h3>Ekstra</h3>
-Få menyen til å "sitte fast" i toppen av siden selv om en scroller. Annet innhold skal forsvinne under den.
+* Typografi &amp; farger
+* Gradients  Shadows
+* Transforms  Transitions  Animations
 
-</div>
+---
 
-<div style="float:left;width:45%">
-    <a href="img/101-oppg/oppg1-1.png" target="_blank" title="Utgangspunkt">
-<img src="img/101-oppg/oppg1-1.png" style="max-width:100%;margin-bottom:20px"/>
-    </a>
-    <a href="img/101-oppg/oppg1-2.png" target="_blank" title="Ønsket design">
-<img src="img/101-oppg/oppg1-2.png" style="max-width:100%;"/>
-    </a>
-</div>
+.middle.center
+
+# Typografi
+
+---
+
+# Typografi
+
+    .css
+
+    /* Fonter */
+    .selector {
+      font-family: Helvetica, Arial, Sans-serif;
+    }
+
+    /* Skriftstørrelse */
+    .selector {
+      font-size: 12px; /* 1.2em / 90% */
+    }
+
+    /* Linjeavstand */
+    .selector {
+      line-height: 1.2 /* 120% / 15px */
+    }
+
+    /* Uthevet */
+    .selector {
+      font-weight: bold;
+    } 
+
+---
+
+# Typografi
+
+    .css
+
+    /* Kursiv */
+    .selector {
+      font-style: italic; 
+    }
+
+    /* Understreking */
+    .selector {
+      text-decoration: underline;
+      /* border-bottom: 1px solid #333 */  
+    }
+
+    /* Sperring (avstand mellom bokstaver) */
+    .selector {
+      letter-spacing: 1px;
+    }
+
+    /* VERSALER */
+    .selector {
+      text-transform: uppercase; 
+    }
+
+---
+
+.middle.center
+
+# Fonter
+
+<span class="fs">Lett å bruke,  <span class="f1">vanskelig</span> <span class="f2">å mestre</span></span>
+
+---
+
+.middle.center.invert
+
+![Standardfonts](../img/fonts.png)
+
+---
+
+.middle.center.caniuse
+
+![CaniuseFonts](../img/caniuse.fonts.png)
+
+---
+
+.middle.center
+
+![Google](../img/webfonts.png)
+
+---
+
+.middle.center
+
+![Google](../img/typekit.png)
+
+---
+
+.middle.center
+
+![Eg1](../img/fonts3.png)
+
+---
+
+.middle.center
+
+![Eg2](../img/fonts4.png)
+
+---
+
+.middle.center
+
+![Eg3](../img/fonts1.png)
+
+---
+
+# Web fonts
+
+1a. Importer font via CSS:
+
+    .css
+    @font-face {
+      font-family: 'Snowburst One';
+      font-style: normal;
+      font-weight: 400;
+      src: url("myfont.woff") format('woff');
+    }
+
+1b. Importer font via HTML (f.eks. for Google Web Fonts):
+
+    .html
+    <link type='text/css' rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=SnowburstOne'>
+
+2\. Bruk fonten:
+
+    .css
+    body {
+        font-family: "Snowburst One", Helvetica, Arial, sans-serif;
+    }
+
+---
+
+.middle.center
+
+# Icon fonts
+
+Windings
+
+---
+
+.middle.center.invert
+
+![Iconfonts example](../img/awsfont2.png)
+
+---
+
+.middle.center
+
+![Awsfont](../img/awsfont.png)
+
+---
+
+.middle.center
+
+![Icomoon](../img/icomoon.png)
+
+---
+
+# Farger
+
+    .css
+    /* Farge på tekst */
+    .selector-a {
+      color: #000000; 
+    }
+
+    .selector-b {
+      color: rgb(0, 0, 0);
+    }
+
+    .selector-c {
+      color: rgba(0, 0, 0, 0.5); 
+    }
+
+    .selector-d {
+	  border: 10px solid green; 
+	}
+
+---
+
+#Farger
+
+    .css 
+    /* Bakgrunnsfarge */
+    .selector {
+      background-color: blue; 
+    }
+
+    /* Bakgrunnsbilde */
+    .selector {
+      background-image: url('img/bg.gif');
+      background-repeat: repeat-x;
+      background-position: top center; /* eller koordinater: x y */
+    }
+
+---
+
+.middle.center.gradient
+
+# CSS Gradients
+
+Mer fleksibelt enn bakgrunnsbilder
+
+---
+
+# CSS Gradients
+
+    .css
+    /* fallback */
+    background-color:#063053;
+
+    /* Gradient */
+    background-image: linear-gradient(red, green, blue, purple, orange);
+
+---
+
+# CSS Gradients
+
+    .css
+    /* fallback */
+    background-color:#063053;
+
+    /* chrome 10, safari 5.1 */
+    background-image: -webkit-linear-gradient(red, green, blue, purple, orange);
+
+    /* firefox; multiple color stops */
+    background-image: -moz-linear-gradient(top, red, green, blue, purple, orange);
+
+    /* ie10 */
+    background-image: -ms-linear-gradient(red, green, blue, purple, orange);
+
+    /* opera 11.1 */
+    background-image: -o-linear-gradient(red, green, blue, purple, orange);
+
+    /* Gradient */
+    background-image: linear-gradient(red, green, blue, purple, orange);
+
+    /*
+     * Generering av gradienter:
+     *
+     * - http://www.colorzilla.com/gradient-editor/
+     * - SASS, LESS, Stylus, etc.
+     */
+
+---
+
+# CSS Gradients
+
+    .css
+    <!--[if lt IE 10]>
+        <style>
+
+            .gradientElement {
+
+              filter: progid:DXImageTransform.Microsoft.gradient(
+                startColorstr='#063053', endColorstr='#395873');
+
+              -ms-filter: "progid:DXImageTransform.Microsoft.gradient(
+                startColorstr='#063053', endColorstr='#395873')";
+
+            }
+
+        </style>
+    <![endif]-->
+
+---
+
+.middle.center
+
+![colorzilla](../img/colorzilla.png)
+
+---
+
+.middle.center.shadow
+
+<div class="shadow1">
+# Skygger
 </div>
 
 ---
+
+# Skygger
+
+    .css
+    /*
+     * text-shadow: x y blur color;
+     */
+    p {
+        text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+    }
+
+    /*
+     * box-shadow: x y blur color;
+     */
+    .box1 {
+        box-shadow:0 2px 3px rgba(0,0,0,0.2);
+    }
+
+    /*
+     * box-shadow: inset x y blur color;
+     */
+    .box2 {
+        box-shadow: inset 0 2px 3px rgba(0,0,0,0.2);
+    }
+
+---
+
 .middle.center
 
-##Spørsmål?
+# CSS Transforms
 
-anders.skifte@bekk.no<br/>
-[@skifte](http://twitter.com/skifte)
+Endre koordinater utenom flyten, i 2D og 3D.
+
+---
+
+# CSS Transforms
+
+    .css
+    /*
+     * Øk størrelsen på elementer med klassen "foo" 2x,
+     * langs både X- og Y-aksen.
+     */
+    .foo {
+        transform: scale(2, 2);
+    }
+
+    /*
+     * Roter elementet 45 grader, i 2D.
+     */
+    .foo {
+        transform: rotateX(45deg);
+    }
+
+---
+
+# CSS Transforms
+
+    .css
+    /*
+     * Øk størrelsen på elementer med klassen "foo" 2x,
+     * langs både X- og Y-aksen.
+     */
+    .foo {
+        -webkit-transform: scale(2, 2); /* webkit */
+        -moz-transform: scale(2, 2);    /* firefox */
+        -ms-transform: scale(2, 2);     /* IE */
+        -o-transform: scale(2, 2);      /* Opera */
+        transform: scale(2, 2);         /* W3C */
+    }
+
+    /*
+     * Roter elementet 45 grader, i 2D.
+     */
+    .foo {
+        -webkit-transform: rotateX(45deg); /* webkit */
+        -moz-transform: rotateX(45deg);    /* firefox */
+        -ms-transform: rotateX(45deg);     /* IE */
+        -o-transform: rotateX(45deg);      /* Opera */
+        transform: rotateX(45deg);         /* W3C */
+    }
+
+---
+
+.middle.center.imgtranslate
+
+![Icomoon](../img/typekit.png)
+
+    .css
+    img { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
 
+---
+
+.middle.center.caniuse
+
+![caniuse.transforms](../img/caniuse.transforms.png)
+
+
+---
+
+# CSS Transforms
+
+    .css
+    .foo {
+
+        /* Flytt langs x/y. */
+        transform: translate(12px, 50%);
+        transform: translateX(2em);
+        transform: translateY(3in);
+
+        /* skalering */
+        transform: scale(2, 0.5);
+        transform: scaleX(2);
+        transform: scaleY(0.5);
+        transform: scale3d(2.5, 1.2, 0.3);
+        transform: scaleZ(0.3);
+
+        /* perspektiv */
+        transform: skewX(30deg);
+        transform: skewY(1.07rad);
+        transform: translate3d(12px, 50%, 3em);
+        transform: translateZ(2px);
+
+        /* rotering */
+        transform: rotate3d(1, 2.0, 3.0, 10deg);
+        transform: rotateX(10deg);
+        transform: rotateY(10deg);
+        transform: rotateZ(10deg);
+        transform: perspective(17px);
+
+        /* kombinering av flere transforms */
+        transform: translateX(10px) rotate(10deg) translateY(5px);
+
+    }
+
+---
+
+.middle.center
+
+# CSS Transitions
+
+Overgang mellom stiler, med implisitt animasjon.
+
+
+---
+
+.anim
+
+# CSS Transitions
+
+    .css
+    a {
+        color:#fd5158;
+        transition: color 100ms ease-in-out;
+    }
+
+    a:hover {
+        color:#fff;
+    }
+
+<a href="#">Test</a>
+
+---
+
+# CSS Transitions
+
+    .css
+    .foo {
+        /* hva som skal animeres */
+        transition-property: none;
+        transition-property: all;
+        transition-property: color;
+        transition-property: width;
+        transition-property: transform; /* <-- !! */
+
+        /* varighet for animasjonen */
+        transition-duration: 6s;
+        transition-duration: 120ms;
+
+        /* forsinkelse før animasjonen starter */
+        transition-delay: 3s;
+        transition-delay: 100ms;
+
+        /* endringsfunksjon over tid */
+        transition-timing-function: ease;
+        transition-timing-function: ease-in;
+        transition-timing-function: ease-out;
+        transition-timing-function: ease-in-out;
+        transition-timing-function: linear;
+        transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        transition-timing-function: step-start;
+        transition-timing-function: step-end;
+        transition-timing-function: steps(4, end);
+
+        /* short-hand */
+        transition: color 100ms ease-in-out;
+    }
+
+
+---
+
+.middle.center.imganim
+
+![Icomoon](../img/typekit.png)
+
+    .css
+    img { transition: transform 300ms ease-in-out; }
+    img:hover { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+
+---
+
+.middle.center
+
+# CSS Animations
+
+Egne animasjoner mellom stiler, med keyframes.
+
+---
+
+<div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
+
+---
+
+.middle.center.anim-steps
+
+![circle](../img/circle.png)
+
+<div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
+
+---
+
+# CSS Animations
+
+    .css
+    @keyframes rotation1 {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(359deg); }
+    }
+
+    @keyframes rotation2 {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(-359deg); }
+    }
+
+    .spinner1 {
+        border:20px solid #228fd3;
+        border-right:20px solid #000;
+        border-left:20px solid #000;
+        border-radius:160px;
+        width:160px;
+        height:160px;
+        animation:rotation1 1s infinite linear;
+    }
+
+    .spinner2 {
+        border:5px solid #228fd3;
+        border-right:5px solid #000;
+        border-left:5px solid #000;
+        border-radius:20px;
+        width:20px;
+        height:20px;
+        animation:rotation2 1s infinite linear;
+    }
+
+---
+
+# CSS3
+
+&nbsp;
+## Les mer på nettet: 
+
+* http://www.css3files.com/
+
+---
+
+.middle.center
+
+# Oppgave
+
+---
 
     </textarea>
     <div id="slideshow"></div>
