@@ -1,57 +1,104 @@
 /* Reset */
 
-ul, body, h2, h3, h4 {
+ul {
 	padding: 				0;
 	margin: 				0;
 }
 
-.section:after, .clearfix:after { 
-    content: 				"."; 
-    visibility: 			hidden; 
-    display: 				block; 
-    height: 				0; 
-    clear: 					both
+h1 {
+	margin: 				0;
 }
 
-.section {
-	clear: both; 
-	padding: 20px 0;
+section:after, .clearfix:after { 
+	content: 				"."; 
+	visibility: 			hidden; 
+	display: 				block; 
+	height: 				0; 
+	clear: 					both
 }
 
-
-/* Section: Top area*/
-
-
-header, nav, section {
-	margin-bottom: 			20px;
+body {
+	margin: 				0;
+	padding: 				0;
+	background-color: 		lightgray;
 }
 
+.teaserTitle {
+	text-align: 			center;
+}
+
+.sectionTitle {
+	border: 				1px solid black;
+}
 
 .container {
-	width: 					960px;
-	padding: 				40px;
-	margin: 				0 auto;
-	position: 				relative;
+	background-color: 		white;
+}
+
+/* Oppgave 1: Generell oppstramming */
+
+.container {
+	width: 				960px;
+	padding: 			40px;
+	margin: 			0 auto;
+	position: 			relative;
 }
 
 #global-search {
-	position: 				absolute;
-	top: 					60px;
-	right: 					40px;
+	position: 			absolute;
+	top: 				40px;
+	right: 				60px;
 }
+
+h1 {
+	text-align: 		center;
+}
+
+/* Oppgave 2: Menyen; */
 
 .menuElement {
-	float: 					left;
-	width: 					190px;
-	padding: 				20px 0;
-	border: 				1px solid black;
-	list-style: 			none;
+	list-style: 		none;
+	float: 				left;
+	width: 				20%;
+	text-align: 		center;
+	padding: 			20px 0px;
 }
 
 
-/* Section: Image */
+/* Oppgave 3: Våre tjenester-seksjonen */
 
-/* Must be set in order to position: absolute to work on children elements */
+.service {
+	float: 				left;
+	width: 				25%;
+	padding: 			10px;
+	box-sizing:			border-box;
+}
+
+
+/* Oppgave 4: Seksjonsheadere */
+
+.sectionHeader {
+	text-align: 		center;
+}
+
+.sectionTitle {
+	display: 			inline-block;
+	padding: 			8px 25px;
+}
+
+/* Oppgave 5: Selvskryt-seksjonen */
+
+.promo {
+	float: 				left;
+	margin-right: 		30px;
+	text-align: 		center;
+}
+
+.promo:last-of-type {
+	margin-right: 		0px;
+}
+
+/* Oppgave 6: Forrige/neste-knapper */
 .imageGallery {
 	position: 				relative;
 }
@@ -69,62 +116,9 @@ header, nav, section {
 	background-color: 		white;
 }
 
-/* Section: Articles */
-
-article {
-	float: 					left;
-}
-
-.aboutUs article {
-	width: 					220px;
-	padding: 				10px;
-}
-
-.news article {
-	margin-right: 			30px;
-	text-align: 			center;
-}
-
-.news article:last-of-type {
-	margin-right: 0px;
-}
-
-/* Section: Footer */
-
-footer {
-	background: #ccc; 
-}
+/* Oppgave 7: Footer-seksjonen */
 
 .footerItem {
-	width: 30%;
-	padding: 1.5%;
-	float: left;
-}
-
-
-/* Some details */
-
-.teaserTitle, .sectionTitle {
-	text-align: center;
-	padding: 20px 0;
-}
-
-.sectionHeader {
-	margin-top: 30px;
-}
-
-.sectionTitle {
-	display: inline-block;
-	text-align: center;
-	height: 30px;
-	line-height: 30px;
-}
-
-section header {
-	text-align: center;
-}
-
-section header h3 {
-	display: inline-block;
-	padding: 10px 20px;
+	float: 				left;
+	width: 				33%;
 }
