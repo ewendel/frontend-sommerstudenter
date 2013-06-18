@@ -1,0 +1,130 @@
+/* Reset */
+
+ul, body, h2, h3, h4 {
+	padding: 				0;
+	margin: 				0;
+}
+
+.section:after, .clearfix:after { 
+    content: 				"."; 
+    visibility: 			hidden; 
+    display: 				block; 
+    height: 				0; 
+    clear: 					both
+}
+
+.section {
+	clear: both; 
+	padding: 20px 0;
+}
+
+
+/* Section: Top area*/
+
+
+header, nav, section {
+	margin-bottom: 			20px;
+}
+
+
+.container {
+	width: 					960px;
+	padding: 				40px;
+	margin: 				0 auto;
+	position: 				relative;
+}
+
+#global-search {
+	position: 				absolute;
+	top: 					60px;
+	right: 					40px;
+}
+
+.menuElement {
+	float: 					left;
+	width: 					190px;
+	padding: 				20px 0;
+	border: 				1px solid black;
+	list-style: 			none;
+}
+
+
+/* Section: Image */
+
+/* Must be set in order to position: absolute to work on children elements */
+.imageGallery {
+	position: 				relative;
+}
+
+.imageGalleryNav {
+	position: 				absolute;
+	right: 					20px;
+	bottom: 				20px;
+}
+
+.imageButton {
+	list-style: 			none;
+	padding: 				10px 20px;
+	display: 				inline-block;
+	background-color: 		white;
+}
+
+/* Section: Articles */
+
+article {
+	float: 					left;
+}
+
+.aboutUs article {
+	width: 					220px;
+	padding: 				10px;
+}
+
+.news article {
+	margin-right: 			30px;
+	text-align: 			center;
+}
+
+.news article:last-of-type {
+	margin-right: 0px;
+}
+
+/* Section: Footer */
+
+footer {
+	background: #ccc; 
+}
+
+.footerItem {
+	width: 30%;
+	padding: 1.5%;
+	float: left;
+}
+
+
+/* Some details */
+
+.teaserTitle, .sectionTitle {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.sectionHeader {
+	margin-top: 30px;
+}
+
+.sectionTitle {
+	display: inline-block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+
+section header {
+	text-align: center;
+}
+
+section header h3 {
+	display: inline-block;
+	padding: 10px 20px;
+}
