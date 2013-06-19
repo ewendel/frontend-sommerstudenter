@@ -10,18 +10,6 @@ ul, body, h2, h3, h4 {
     padding: 20px 0;
 }
 
-
-/* Reset */
-
-ul {
-    padding:                0;
-    margin:                 0;
-}
-
-h1 {
-    margin:                 0;
-}
-
 section:after, .section:after, .clearfix:after { 
     content:                "."; 
     visibility:             hidden; 
