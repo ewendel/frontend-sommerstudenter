@@ -39,3 +39,8 @@ Oppgave: lage et bildegalleri
 #### Del 6: Moderne JavaScript (Kent)
 
 Events, Ajax, "moderne" javascript. 
+
+
+Wilcards:
+  -  Ytelse i frontend
+  -  Struktur i store JS-apps
