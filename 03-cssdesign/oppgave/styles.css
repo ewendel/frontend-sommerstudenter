@@ -1,28 +1,3 @@
-/* Reset */
-
-ul {
-    padding:                0;
-    margin:                 0;
-}
-
-h1 {
-    margin:                 0;
-}
-
-section:after, .clearfix:after { 
-    content:                "."; 
-    visibility:             hidden; 
-    display:                block; 
-    height:                 0; 
-    clear:                  both
-}
-
-body {
-    margin:                 0;
-    padding:                0;
-    background-color:       lightgray;
-}
-
 /* Oppgave 1: Generell oppstramming */
 
 /* Oppgave 2: Menyen; */
@@ -34,5 +9,7 @@ body {
 /* Oppgave 5: Aktuelt-seksjonen */
 
 /* Oppgave 6: BEKK Open-seksjonen */
+
+/* Oppgave 7: Lag en transition i menyen */
 
 /* Oppgave 8: Footer-seksjonen */

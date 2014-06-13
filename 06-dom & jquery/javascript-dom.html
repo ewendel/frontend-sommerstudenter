@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Javascript i nettleseren - Kurs i Grensesnittsprogrammering</title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400|Dosis:300,400|Source+Code+Pro:200,300,400,400bold' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../remark/kimjoe.css">
+    <link rel="stylesheet" href="../remark/kimjoe.css">
     <style type="text/css" media="screen">
 
 
@@ -13,9 +13,9 @@
   <body>
     <textarea id="source">
 
-class: center middle
+class: center middle yellow
 
-# Javascript i nettleseren
+# JavaScript i nettleseren
 
 ---
 
@@ -63,11 +63,11 @@ Ok - så vi bruker javascript til å skape dynamisk oppførsel på nettsidene v�
 
 ---
 
-class: inverse
+class: center
 
 # Document Object Model
 
-![dom-tree](../../img/DOM.png)
+![dom-tree](../img/DOM.png)
 
 ---
 
@@ -216,6 +216,8 @@ Man kan også legge til innerHTML i stedet for å overskrive:
 
 ---
 
+class: yellow
+
 # Oppgave: The Logo Hijack
 
 No homepage is safe from the logo bandit!
@@ -278,7 +280,7 @@ window er også (som regel) det globale objektet:
 
 ---
 
-# Animering i JS
+# Tidsstyring
 
 For å kalle en funksjon etter en delay:
 
@@ -329,13 +331,13 @@ class: middle center
 
 # But wait...
 
-![wtfcat](../../img/wtfcat.png)
+![wtfcat](../img/wtfcat.png)
 
 ---
 
 class: fullscreen
 
-![jQuery](../../img/jquery_logo.png)
+![jQuery](../img/jquery_logo.png)
 
 <div class="overlay" style="top: 70%; text-align: center">
 # 65%+ / 10,000
@@ -486,6 +488,8 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
 
 ---
 
+class: yellow
+
 # Oppgave
   
   ## Bruk alt du har lært til nå til å lage et slide-show
@@ -497,6 +501,8 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
   Dette løses ved å ha mange img-elementer liggende i DOM-en og kun ha ett av disse synlig om gangen. Ved å vise dem i rekkefølge med en timer får vi en slideshow-effekt.
 
 ---
+
+class: yellow
 
 # Oppgave
   
@@ -513,6 +519,8 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
 
 ---
 
+class: yellow
+
 # Oppgave
   
   ## 2) Hvis tid: bytte bilde ved hjelp av knappene
@@ -525,7 +533,7 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
 
 ---
 
-class: middle center
+class: middle center yellow
 
 # <a href="../07-moderne javascript/moderne javascript.html">Klikk for neste presentasjon</a>
 
@@ -534,7 +542,6 @@ class: middle center
     <script type="text/javascript">
       var hljs = remark.highlighter.engine;
     </script>
-    <script src="js/remark.language.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create({

@@ -79,3 +79,21 @@ body {
 code {
         font-size: 14px;
 }
+
+.cv img {
+  width: 280px;
+  height: 450px;
+}
+
+.cv p {
+  display: inline-block;
+}
+
+.prereqs p {
+  display: inline-block; 
+  width: 200px;
+}
+
+.prereqs img {
+  width: 100px;
+}
