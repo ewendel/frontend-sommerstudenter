@@ -97,3 +97,10 @@ code {
 .prereqs img {
   width: 100px;
 }
+
+.source {
+  position: absolute;
+  bottom: 2px;
+  left: 5px;
+  font-size: 10px;
+}

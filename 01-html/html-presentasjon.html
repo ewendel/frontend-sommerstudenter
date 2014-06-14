@@ -21,13 +21,16 @@
   <body>
     <textarea id="source">
 
-class: middle center yellow
+class: fullscreen
 
-# Dagskurs i frontendutvikling
+![code](../img/code.jpeg)
 
-En introduksjon til HTML, CSS og JavaScript
-
-Erik Wendel & Kent Andersen
+<div class="overlay loud" style="top: 55%">
+<p>
+    Kurs i frontendutvikling
+    <small style="display:block;">En introduksjon til HTML, CSS og JavaScript</small>
+</p>
+</div>
 
 ???
 
@@ -89,29 +92,31 @@ Her finnes presentasjonene, oppgaver samt løsningsforslag.
 
 class: middle center
 
-# FØRST: GITHUB
-
 ## is.gd/bekksommer
+
+git clone git@github.com:ewendel/frontend-sommerstudenter.git
 
 ---
 
-class: center
+class: center middle red
 
 ![mac_pc](../img/mac_pc.png)
 
+# Web: write once, run anywhere
+
+???
+
+Mer og mer av appene vi bruker er nå en webapplikasjon, dvs en webside med masse javascript og ajax som får ting til å skje.
+
+Før vi knaller igang med teknologien er det hensiktsmessig å snakke litt mer om hvor weben kommer fra for å forstå hvorfor ting er som det er.
+
 ---
 
-class: middle center
+class: middle center red
 
-# Mozilla Firefox
+![browsers](../img/browsers.png)
 
-# Opera
-
-# Safari
-
-# Chrome
-
-# ...og IE
+## Nettleserstøtte og standardisering
 
 .source[http://en.wikipedia.org/wiki/History_of_the_web_browser ]
 
@@ -123,20 +128,8 @@ class: middle center
 
 ---
 
-class: middle center
-
-# Utfordring: Browserkompabilitet!
-
----
-
 class: fullscreen middle
 ![](../img/browser_uglysite_ie.jpg)
-
----
-
-class: fullscreen middle
-
-![](../img/browser_excite.png)
 
 ---
 
@@ -171,6 +164,7 @@ class: middle
 &nbsp;
 
     <script src="fancy-pants-supercool-flyout-menu.js"></script>
+
     <noscript>
       <ul>
           <li>
@@ -181,21 +175,6 @@ class: middle
           </li>
       </ul>
     </noscript>
-
-
----
-
-class: fullscreen middle
-
-![](../img/browser_cockpit_degrading.jpg)
-
-<div class="overlay loud" style="top:50%">
-<p>
-    Alternative instrumenter
-    <small style="display:block;">Graceful degradation</small>
-</p>
-</div>
-
 
 ---
 
@@ -235,6 +214,7 @@ class: fullscreen middle
 </div>
 
 .source[http://flic.kr/p/4W4qfx]
+
 ---
 
 class: middle center
@@ -331,6 +311,36 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 ---
 
+# HEAD
+
+Inneholder metadata og includes
+
+    <head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=utf-8" />
+        <title>My Awesome Web App</title>
+        <script src="scripts.js" type="text/javascript">
+        </script>
+        <link href="https://github.com/stylesheet.css" 
+              type="text/css" rel="stylesheet"/>
+    </head>
+
+---
+
+class: middle center
+
+# Chrome DevTools
+
+![devtools](../img/devtools.jpg)
+
+Cmd + Alt + J
+
+???
+
+Åpne f.eks DB og inspiser markupen. vis strukturen, at man kan gjøre endringer live
+
+---
+
 class: center middle
 
 # Semantikk
@@ -338,6 +348,10 @@ class: center middle
 ## html, body, div, span, h1, a, p, ... wtf
 
 Semantikk betyr at typen til en HTML-tagg sier noe om hva slags innhold den har.
+
+???
+
+Viktig for f.eks Universell Utforming og søkemotorer
 
 ---
 
@@ -371,6 +385,26 @@ Mer semantisk riktig HTML
 
     <div id="sidebar"></div> &mdash; <aside>…</aside>
 
+
+
+---
+
+# Masse nytt i HTML5
+
+Semantiske tags
+
+Audio API
+
+Video API
+
+Canvas
+
+Web Workers
+
+LocalStorage
+
+WebGL
+
 ---
 
 class: fullscreen
@@ -381,23 +415,7 @@ class: fullscreen
 
 ---
 
-# HEAD
-
-Inneholder metadata og includes
-
-    <head>
-        <meta http-equiv="Content-Type" 
-              content="text/html; charset=utf-8" />
-        <title>My Awesome Web App</title>
-        <script src="scripts.js" type="text/javascript">
-        </script>
-        <link href="https://github.com/stylesheet.css" 
-              type="text/css" rel="stylesheet"/>
-    </head>
-
----
-
-# Innhold
+# Vanlige elementer
   
     // Semantiske containere
     section, article, aside, header, footer, nav, main
@@ -425,73 +443,6 @@ Inneholder metadata og includes
 
 ---
 
-# Eksempelside
-
-        <!doctype html>
-        <header>
-            <h1>Velkommen</h1>
-            <nav>
-              <ul>
-                <li>
-                  <a href="/main.html">Side2</a>
-                </li>
-                <li>
-                  <a href="/signup.html">Side2</a>
-                </li>
-            </nav>
-        </header>
-        <main>
-            <article>En artikkel</article>
-        </main>
-        <aside>Sidebar</aside>
-        <footer> 
-          <form>
-            <input type="text" placeholder="Skriv epostadressen din her"/>
-            <input type="submit" value="Jeg vil ha nyhetsbrev" />
-          </form>
-        </footer>
-
----
-
-# Mobiltriks
-
-    <meta name="apple-mobile-web-app-capable"
-      content="yes" />
-
-    <meta name="apple-mobile-web-app-status-bar-style"
-    content="default" /> // default, black, translucent
-
-    <meta name="viewport"
-    content="user-scalable=no, width=device-width" />
-
-    <link rel="apple-touch-icon"
-      href="./apple-touch-icon.png" />
-
-    <link rel="apple-touch-startup-image"
-      href="./startup.png" />
-
-    <html manifest="cache.manifest">
-
----
-
-# Viktigste nytt i HTML5
-
-Semantiske tags
-
-Audio API
-
-Video API
-
-Canvas
-
-Web Workers
-
-LocalStorage
-
-WebGL
-
----
-
 class: middle center red
 
 # Oppgave
@@ -502,9 +453,9 @@ class: red
 
 # Oppgave
 
-## Skriv HTML5 for <a href="../Mockup/Mockup.pdf">denne nettsiden</a>.
+## Skriv HTML5 for <a href="../mockup/Trådskisse.pdf" target="_blank">denne nettsiden</a>
 
-* NITH/01-html/oppgaver
+* frontend-sommerstudenter/01-html/oppgaver
 * Skriv HTML i _index.html_ eller _index-annotated.html_
 
 ---
