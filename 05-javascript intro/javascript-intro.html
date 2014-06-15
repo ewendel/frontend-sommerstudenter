@@ -28,33 +28,32 @@ CSS beskriver hvordan innholdet ser ut.
 
 Men hva hvis vi trenger dynamisk oppførsel?
 
+???
+
+For å ta en kort recap: 
+
+( les opp )
+
+
 ---
 
 class: center
 
 ![Javascript](../img/javascript.png)
 
----
-
-class: agenda
-
-# Agenda
-
-## Objekter
-
-## Funksjoner
-
-## Arv
-
-## DOM
-
-## Ajax
-
-## Events
-
 ???
 
-- Spør underveis
+Det er her JS kommer inn.
+Weben har gått fra å levere statiske dokumenter til å bli verdens største, distribuerte applikasjonsplattform.
+Det merkes.
+JS er ikke egentlig laget for å skrive svære apps, men med tiden har man fått crowbaret til inn på en sjarmerende måte.
+
+For å ta litt historie:
+JS ble skrevet av Brendan Eich da han jobbet for Netscape (som laget NN) i 1995.
+På ti dager. Hvorfor? Fordi de sloss mot IE, som hadde sitt eget VBscript og senere JScript, som var en kopi av JavaScript.
+
+JS var for viktig til å legge dets utviklings i hendene til to rivaliserende teknologiselskapet, så de sendte inn JS til et selskap som drev med standarder og het ECMA. Dermed var ECMAScript født, som er standarden dagens JavaScript-implementasjone er basert på.
+Som med HTML-tags, HTML5 features og CSS-properties er man avhengig av at nettleserne selv implementerer og støtter standerden, slik at også her finnes plenty forskjeller mellom nettleserne.
 
 ---
 
@@ -89,22 +88,6 @@ class: middle center
 
 ---
 
-# BananaBread
-
-- Skrevet i C++ og OpenGL
---
-
-- Kompilert med Emscripten til JavaScript og WebGL
-
---
-- ASM.js og WebRTC
-
-???
-
-- ASM.js: Et subset av JavaScript, strengere syntaks, har typer, etc. 
-- WebRTC: WebRTC (Web Real-Time Communication): Et API utvikliet av W3C for la nettlesere snakke med hverandre, slik at man kan ringe, ha video-samtaler og dele filer mellom nettlesere uten plugins. 
----
-
 class: middle center
 
 JavaScript er et programmeringspråk
@@ -119,35 +102,76 @@ class: middle center
 
 # JavaScript vs. Java
 
-## Likheter
+* Dynamisk språk vs. kompilert språk
+* Dynamisk typing vs. statisk typing
+* Prototypebasert arv vs. klassebasert arv
 
-* Objektorientert
-* Arv
+---
+
+class: middle center
+
+# La oss ta en rask introduksjon
+
+???
+
+Okei, nok bakgrunnspreik. Det vi skal gjøre nå er å ha en teknisk og syntaxmessig gjennom av JavaScript.
+Dette er delt opp i bolker, og på slutten av hver bolk vil det være praktiske oppgaver.
+
+Dersom noen aldri har vært noe borti JS fra før, og kanskje heller ikke andre dynamiske språk, kan dette være serious brainfuck.
+SPØR OM HJELP DERSOM NOE ER VANSKELIG! Serr!
+
+---
+
+# Variabler, objekter og datatyper
+
+Variabler er typeløse i JS
+
+    var errorText = 'Det har oppstått en feil'; // String
+    var successText = "Hurra! Alt gikk bra."; // også String
+
+    var loggedIn = true; // Boolean
+
+    var authLevel = 2; Number (int)
+
+    var interestRate = 2.5; // Number (flyttall)
+
+    interestRate = false; // endre type
+
+    var serviceList = []; // array
+
+---
+
+# Typer
+
+Vi kan bruke **typeof**-operatoren for å sjekke type.
+
+    typeof {};          // 'object'
+
+--
+    typeof [];          // 'object'     WTF?
+
+--
+    typeof 1;           // 'number'
+
+--
+    typeof '';          // 'string'
+
+--
+    typeof true;        // 'boolean'
+
+--
+    typeof false;       // 'boolean'
+
+--
+    typeof minVar       // 'undefined'
 
 --
 
-## Forskjeller
-
-* Dynamisk språk vs. kompileringsspråk
-* Dynamisk typing vs. statisk typing
-* Prototypebasert vs. klassebasert
-* Skriptspråk vs. programmeringsspråk
+    typeof null;        // 'object'     WTF?
 
 ---
 
-class: middle center
-
-La oss ta en rask introduksjon
-
----
-
-class: middle center
-
-# Objekter
-
----
-
-# Objekter
+# Variabler, objekter og datatyper
 
 En samling av "key-value"
 
@@ -163,49 +187,53 @@ En samling av "key-value"
     delete obj.key1;
     obj.key1;         // undefined
 
+???
+
+I Java måtte man typisk først ha laget en klasse og definert at objekter av denne typen vil ha disse feltene. 
+I JS kan man bare slenge på og ta bort felter som man ønsker, runtime.
+
+Dette gjør det lett å referere til felter som ikke finnes og dermed skape trøbbel.
+
 ---
 
-# Objekter
+# Variabler, objekter og datatyper
 
 Value kan være hva som helst.
 
     var obj = {
-        key1: 'value1',
-        key2: 13
-        key3: true,
-        key4: {
-            key1: 'Value2'
+        nestedObj: {
+            nestedProperty: 'en feit streng'
         },
-        key5: function(arg) {
-            console.log(arg)
+        log: function() {
+            console.log('Hello World!');
         }
     };
 
-    obj.key5(); // Kaller på metoden
-    obj.key4.key1 // Nøster oss nedover
+    obj.log(); // Kaller på metoden
+    obj.nestedObj.nestedProperty // Nøster oss nedover
 
 ---
 
-# Objekter
+# Variabler, objekter og datatyper
 
-## Nesten alt er objekter i JavaScript!
+Nesten alt er objekter i JavaScript
 
-    var navn = "Helge Fredheim";
+    var navn = "Erik Wendel";
     typeof navn; // "string"
 
 --
 
     /* Strengen har metoder og attributter */
     navn.length; // 14
-    navn.substr(0, 5); // Helge
-    navn.split(" "); // ["Helge", "Fredheim"]
-    navn.replace("Helge", "Kenneth"); // Kenneth Fredheim
+    navn.substr(0, 5); // Erik
+    navn.split(" "); // ["Erik", "Wendel"]
+    navn.replace("Wendel", "Solbakken"); // Erik Solbakken
 
 ---
 
-# Objekter
+# Variabler, objekter og datatyper
 
-## Nesten alt er objekter i JavaScript!
+Nesten alt er objekter i JavaScript
 
     var frukter = ["eple", "banan"];
     typeof frukter; // "object" (!!)
@@ -219,7 +247,7 @@ Value kan være hva som helst.
 
 ---
 
-# Objekter
+# Variabler, objekter og datatyper
 
 ## Arrays vs. objekter
 
@@ -239,7 +267,7 @@ En samling av indekserte properties.
 
 ---
 
-# Objekter
+# Variabler, objekter og datatyper
 
 ## Arrays vs. objekter
 
@@ -285,46 +313,17 @@ Array er ikke "ekte" arrays:
 
 ---
 
-# Typer
-
-Vi kan bruke **typeof**-operatoren for å sjekke type.
-
-    typeof {};          // 'object'
-
---
-    typeof [];          // 'object'     WTF?
-
---
-    typeof 1;           // 'number'
-
---
-    typeof '';          // 'string'
-
---
-    typeof true;        // 'boolean'
-
---
-    typeof false;       // 'boolean'
-
---
-    typeof minVar       // 'undefined'
-
---
-
-    typeof null;        // 'object'     WTF?
-
----
-
 class: yellow
 
 # Oppgaver
 
 ## Prøv å få testene til å bli grønne
 
-1. Set the three properties, in three different ways: http://jsbin.com/owezaz/5/edit
-2. Populate array: http://jsbin.com/oginom/2/edit
-3. Create copy: http://jsbin.com/umiraq/2/edit
-4. doubleMe: http://jsbin.com/ituxar/3/edit
+1. Mr. Setter: http://jsbin.com/hojez/1/edit
+2. Populate array: http://jsbin.com/vusan/2/edit
+3. Object property types: http://jsbin.com/muqof/2/edit
+4. Array iteration: http://jsbin.com/tuguv/4/edit
+5. doubleMe: http://jsbin.com/yutep/4/edit
 
 ---
 
@@ -385,7 +384,7 @@ Funksjoner som returnerer andre funksjoner:
     
 --
     var sayHello = createFunction();
-    sayHello("Helge");  // "Hello Helge"
+    sayHello("World");  // "Hello World"
 
 ---
 
@@ -620,14 +619,14 @@ class: yellow
 
 # Oppgaver
 
-1. Number of arguments: http://jsbin.com/owogap/3/edit
-2. Higher order functions: http://jsbin.com/asojop/2/edit
-3. Variables by reference: http://jsbin.com/uwemiz/5/edit
-4. Scope: http://jsbin.com/asojop/4/edit
-5. Binding scope: http://jsbin.com/evabis/2/edit
-6. What is this?: (mangler)
-7. Constructing objects: http://jsbin.com/ucamoc/2/edit
-8. Context confusion: http://jsbin.com/etozef/2/edit
+Funksjoner
+
+1. Number of arguments: [jsbin.com/riveh/1/edit](http://jsbin.com/riveh/1/edit)
+2. Higher order functions: [jsbin.com/noxal/1/edit](http://jsbin.com/noxal/1/edit)
+3. Variables by reference: [jsbin.com/yataz/1/edit](http://jsbin.com/yataz/1/edit)
+4. Constructing objects: [jsbin.com/qihow/3/edit](http://jsbin.com/qihow/3/edit)
+5. Binding scope: [jsbin.com/toneq/5/edit](http://jsbin.com/toneq/5/edit)
+6. Scope: [jsbin.com/nujupa/2/edit](http://jsbin.com/nujupa/2/edit)
 
 ---
 
@@ -660,7 +659,7 @@ class: middle center
 
 ## Arver egenskaper fra prototypen sin: 
   
-    var navn = "Helge";
+    var navn = "Erik";
     navn.charAt(0); // "H"
 
     // charAt() arves fra String.prototype
@@ -677,8 +676,8 @@ For eksempel **String**:
         console.log("Logged string: " + String(this));
     };
 
-    var navn = "Helge Fredheim"
-    navn.log(); // "Logged string: Helge Fredheim"
+    var navn = "Erik Wendel"
+    navn.log(); // "Logged string: Erik Wendel"
 
 ---
 
@@ -727,8 +726,8 @@ Som vi vet:
         this.navn = navn;
     };
 
-    var helge = new Person("Helge");
-    helge.navn // "Helge"
+    var erik = new Person("erik");
+    erik.navn // "erik"
 
 ---
 
