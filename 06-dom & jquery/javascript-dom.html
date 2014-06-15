@@ -87,6 +87,12 @@ Hvis HTML-en inneholder dette...
 
 ---
 
+class: middle center
+
+![devtools](../img/devtools.jpg)
+
+---
+
 # DOM-aksess: etter elementnavn
 
 vi kan også aksessere noder etter elementnavn:
@@ -97,11 +103,6 @@ vi kan også aksessere noder etter elementnavn:
 dette vil returnere en liste
 
     var listItems = document.getElementsByTagName('li'); // array
-    
-    for (var i = 0; i < listItems.length; i++) {
-      var listItem = listItems[i];
-      doSomething(listItem);
-    }
 
 ---
 
@@ -114,16 +115,13 @@ Tilgjengelig in IE9+, FF3.6+, Chrome 17+, Safari 5+:
     document.getElementsByClassName(className);
 
     var catNames = document.getElementsByClassName('catname'); // array
-    for (var i =0; i < catNames.length; i++) {
-      var catName = catNames[i];
-      doSomething(catName);
-    }
 
 Tilgjengelig i IE8+, FF3.6+, Chrome 17+, Safari 5+:
 
     document.querySelector(cssQuery); // returnerer første eller null
+    
     document.querySelectorAll(cssQuery); // alle
-    var catNames = document.querySelectorAll('ul li.catname');
+    var catNames = document.querySelectorAll('ul li.catname'); // array
 
 ---
 
@@ -222,7 +220,7 @@ class: yellow
 
 No homepage is safe from the logo bandit!
 
-Open up www.google.com in Chrome or Firefox, and open up the console.<br><br>
+Open www.google.com in Chrome and open up the console.<br><br>
 Find the Google logo and store it in a variable.<br><br>
 Modify the source of the logo IMG so that it's a Yahoo logo instead.<br><br>
 Find the Google search button and store it in a variable.<br><br>
@@ -232,9 +230,9 @@ Modify the text of the button so that it says "Yahooo!" instead.
 
 class: middle center
 
-# Events
+# Brukerinput
 
-For å utføre js-kode ved andre tidspunkt enn ved lasting av siden, trenger vi å håndtere input fra brukeren
+For å utføre js-kode ved andre tidspunkt enn sidelast, må vi lytte på input fra bruker
 
 ---
 
@@ -300,9 +298,10 @@ Eksempel:
 
 ---
 
-# Animering i JS
+# Tidsstyring
 
 setInterval og setTimeout returnerer en referanse som kan brukes til å stoppe utføringen:
+
 
     var delayedAction = setTimeout(callback, delay);
     var repeatingAction = setInterval(callback, interval);
@@ -312,7 +311,8 @@ setInterval og setTimeout returnerer en referanse som kan brukes til å stoppe u
 
 ---
 
-# Animering i JS
+# Tidsstyring
+
 
     var img = document.getElementsByTagName('img')[0];
     img.style.opacity = 1.0;
@@ -324,7 +324,6 @@ setInterval og setTimeout returnerer en referanse som kan brukes til å stoppe u
       }
     }
     var fadeTimer = window.setInterval(fadeAway, 100);
-
 ---
 
 class: middle center
@@ -335,17 +334,13 @@ class: middle center
 
 ---
 
-class: fullscreen
+class: middle center
 
-![jQuery](../img/jquery_logo.png)
+![jQuery](../img/jquery-logo.png)
 
-<div class="overlay" style="top: 70%; text-align: center">
 # 65%+ / 10,000
-</div>
 
----
-
-# jQuery
+???
 
 - abstraherer bort nettleserforskjeller i DOM-APIet
 - har et enda enklere og mer konsistent API enn DOM-en
@@ -358,6 +353,27 @@ class: middle center
 
     jQuery *wrapper* vanlige DOM-elementer
 
+
+---
+
+# jQuery
+
+Selektere elementer
+
+
+
+    // JS
+    document.getElementsByTagName('h1');
+    document.getElementsByClassName('container');
+    document.getElementsById('main-button');
+    document.querySelectorAll('.container .link a')
+
+
+    // jQuery 
+    $('h1') // element
+    $('.container') // class
+    $('#main-button') // id
+    $('.container .link a') // css-style
 
 ---
 
@@ -391,9 +407,8 @@ Lytte på klikk
     }
 
     // jQuery
-    $("h1").click(function() {
-      var header = $(this);
-      header.text(header.text() + "!");
+    $("h1").click(function(e) {
+      $(this).text(header.text() + "!");
     });    
 
 ---
@@ -401,7 +416,8 @@ Lytte på klikk
 # jQuery
 
 Endre CSS
- 
+
+
     // Javascript
     var technologies = document.getElementsByClassName("technologies");
     for(i = 0; i < technologies.length; i++) {
@@ -410,22 +426,24 @@ Endre CSS
 
     // jQuery
     $(".technologies").css("color", "red");
-
 ---
 
 # jQuery
 
 Vi kan også opprette noder som ikke finnes i DOM-en
 
+
     var newNode = $('<p class="intro">Lorem ipsum</p>')
 
 Denne noden finnes kun i nettleserens minne og ikke i DOM. For å legge den til må vi gjøre f.eks dette:
+
 
     $('body').append('newNode');
 
 ---
 
 # jQuery Method Chaining
+
 
     $('<p class="intro">Lorem ipsum</p>').appendTo('body').hide().fadeIn();
 
@@ -434,6 +452,7 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
 ---
 
 # jQuery Cheat Sheet
+
 
     var element = $(selektor); // lagre referanse til DOM-element
     $(selektor).next(); // hente neste element i DOM-treet
@@ -449,9 +468,7 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
     $(selektor).fadeIn(); // vise med delay
     $(selektor).fadeOut(); // skjule med delay
 
-<div style="text-align: center">
-[Les mer om jQuery API-et her](http://api.jquery.com/)
-</div>
+.center[[Les mer om jQuery API-et her](http://api.jquery.com/)]
 
 ---
 
@@ -471,9 +488,7 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
 
     console.log("Hello World!"); // Skrive til konsollet
 
-<div style="text-align: center">
-[Les mer om jQuery API-et her](http://api.jquery.com/)
-</div>
+.center[[Les mer om jQuery API-et her](http://api.jquery.com/)]
 ---
 
 # Først litt oppvarming
@@ -545,8 +560,8 @@ class: middle center yellow
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create({
-          highlightStyle: 'solarized_light',
-          highlightLanguage: 'remark'
+          highlightStyle: 'tomorrow',
+          highlightLanguage: 'javascript'
         }) ;
       var a = [];
       slideshow.addListener("slidein",function(b,c){if(a.indexOf(c)>-1)return;var d=$(b);d.find("p:empty").remove(),d.find(".front-page").length===0&&d.find("h1").wrapInner("<span>"),d.find(".pushed img").parent().wrapInner("<span class='img'>"),a.push(c)})
