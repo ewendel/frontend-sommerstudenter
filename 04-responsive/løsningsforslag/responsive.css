@@ -11,19 +11,19 @@
     background-position: 20px 13px;
  }
 
- 
+.image-gallery img {
+	max-width: 			100%;
+	width: 				100%;
+	height: 			auto;
+}
+
 
 @media all and (max-width: 1046px) {
     .container {
-        width:				auto;
+        width:              auto;
     }
 
-    .image-gallery img {
-    	max-width: 			100%;
-    	width: 				100%;
-    	height: 			auto;
-    }
-  
+
     .service-item {
 		width: 				50%;
 		height: 			120px;
