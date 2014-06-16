@@ -12,6 +12,8 @@
         font-weight: 400;
         src: url('../remark/Inconsolata-Regular.ttf'),
       }
+      .left-duck img { float: left; }
+      .right-duck img { float: right; }
 
       #slideshow .slide .content.front-page h1 { width: 100%; }
       .slide p { padding: 0; margin: 1.1em 0; }
@@ -32,12 +34,11 @@
       .css-example .pbox {width:100px;height:100px;line-height: 2;text-align: center;font-size: 3em}
       .css-example .pbox:nth-child(2) {color:red;}
       .css-example .pbox:nth-child(3) {color:white;}
-      .css-example-clear:after, .group:after {
-		   content: "";
+      .css-eaxample-clear:after, .group:after {
+		   content: ".";
 		   visibility: hidden;
 		   height: 0;
 		   display: block;
-		   clear: both;
 		}
 
 		.specificity {display:inline-block;}
@@ -147,7 +148,7 @@
 
 class: fullscreen
 
-![CSS](../img/101/css-gangnam.jpg)
+![CSS](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-gangnam.jpg)
 
 <div class="overlay loud" style="text-align: center; top: 70%">
 <p>
@@ -172,14 +173,14 @@ CSS beskriver derimot hvordan innholdet *ser ut*.
 
 class: middle fullscreen
 
-![NTNU](../img/101/ntnu-style-off.png)
+![NTNU](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/ntnu-style-off.png)
 
 
 ---
 
 class: middle fullscreen
 
-![NTNU](../img/101/ntnu-style-on.png)
+![NTNU](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/ntnu-style-on.png)
 
 ---
 #CSS
@@ -235,6 +236,17 @@ class: middle fullscreen
 
 class: middle center
 
+![devtools](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/devtools.jpg)
+
+???
+
+Vise hvordan man se hvilke selectors som matcher et visst element, og at man kan flikke dem av og på.
+Kort og enkel demo.
+
+---
+
+class: middle center
+
 # Implementere et layout med CSS?
 
 ---
@@ -282,7 +294,7 @@ Inline elementer
 
 class: middle fullscreen blackheader
 
-![Boxes](../img/101/boxes.jpg)
+![Boxes](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/boxes.jpg)
 <div class="" style="position:absolute;top:5%;left:5%;">
 <h1>&nbsp;CSS Box Model&nbsp;</h1>
 </div>
@@ -363,7 +375,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 
 class: middle fullscreen
 
-![Escalator](../img/catbox.jpg)
+![Escalator](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/catbox.jpg)
 <div class="overlay" style="top: 78%;">
   <h1 style="padding: 0px;"> BOX-SIZING </h1>
 </div>
@@ -397,7 +409,7 @@ class: middle fullscreen
 <h1 style="margin: 0; padding: 10px; font-weight: normal; font-style: none;">&nbsp;Floating&nbsp;</h1>
 </div>
 
-![Float](../img/101/css-rubber-ducks.jpg)
+![Float](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-rubber-ducks.jpg)
 
 <div class="source">
 http://flic.kr/p/a6okjV
@@ -412,7 +424,7 @@ class: whitebg
     img {}
 
 <div style="border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;"/>
+    ![](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-rubber-duck-small.jpg")
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -428,8 +440,8 @@ class: whitebg
     img {float:left}
   
 
-<div class="">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:left;"/>
+<div class="left-duck">
+    ![](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-rubber-duck-small.jpg")
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -445,8 +457,8 @@ class: whitebg
     img {float:right}
   
 
-<div class="">
-    <img src="../img/101/css-rubber-duck.jpg" style="width:30%;height:auto;float:right;"/>
+<div class="right-duck">
+    ![](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-rubber-duck-small.jpg")
 <h3>Pusekatt brakk</h3>
 <p>
 En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig gjennom den lysegrønne busken. Da imponerte pusekatten ei lærerinne uansvarlig. Det ble stille og elgen viste hvordan den svære sauen fungerte. Sløve sebraer fyllte luften, og sabeltanntigeren løp over en skiftenøkkel. 
@@ -489,6 +501,8 @@ En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig 
    <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
 
 </div>
+
+
 
 
 ---
@@ -538,7 +552,7 @@ class: whitebg
         visibility: hidden; 
         display: block; 
         height: 0; 
-        clear: both
+        clear: both;
     }
 
     article {margin-right: 10px; float:left}   
@@ -548,6 +562,10 @@ class: whitebg
 <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
 <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
 </div>
+
+<br><br><br><br>
+
+.center[![devtools](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/devtools-small.jpg)]
 
 <!-- 
 
@@ -560,7 +578,7 @@ http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should
 ---
 class: middle fullscreen higher blackheader
 
-![CSS](../img/101/css-position-misplaced.jpg)
+![CSS](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-position-misplaced.jpg)
 
 <div class="" style="position:absolute;top:9%;left:3%;">
 <h1>Position</h1>
@@ -694,7 +712,7 @@ class: whitebg
 <div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
 
 <div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
-![Css is awesome](../img/101/css-awesome.jpg)
+![Css is awesome](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/101/css-awesome.jpg)
 </div>
 </div>
 
@@ -702,13 +720,24 @@ class: whitebg
 
 class: middle center
 
-![devtools](../img/devtools.jpg)
+![devtools](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/devtools.jpg)
 
+???
+
+Vis www.db.no og vis hvordan de bruker posisjonering på forskjellige elementer.
+
+TIPS OSS - absolute
+
+Søkeboks - absolute
+
+Menyelementer (float left og right)
+
+Dagbladet-meny på topp etter scroll (fixed)
 ---
 
 class: middle fullscreen
 
-![catfight](../img/catfight.jpg)
+![catfight](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/catfight.jpg)
 
 <div class="overlay" style="top: 70%">
 <h1 style="font-size: 32px; text-transform: none;">Hva hvis flere selektorer slåss om samme element?</h1>
@@ -717,6 +746,11 @@ class: middle fullscreen
 <div class="source">
 http://4.bp.blogspot.com/_98lRv3X-wZ0/S6oqqpjJqmI/AAAAAAAAADI/a8Es6Lc_hes/s1600/funny-cat-fight.jpg
 </div>
+
+
+???
+
+Hva mener jeg med "sloss om samme element"?
 
 ---
 class: middle
@@ -1108,7 +1142,7 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
 class: middle
 
 #4. Fortsatt uavgjort?
-## Flere likt vekta selektorer fra samme sted?
+## Flere likt vektede selektorer fra samme sted?
 
 ---
 
@@ -1118,44 +1152,123 @@ class: middle
 
 ---
 
-
 #Specificity quiz
 
-    ul#summer-drinks li {
-      font-weight: normal;
-      font-size: 12px;
+```css
+    li {
       color: black;
     } 
 
-    .favorite {
+    li {
       color: red;
-      font-weight: bold;
     }
+    ```
 
 &nbsp;    
-
+```html
      <ul id="summer-drinks">
        <li class="favorite">Whiskey and Ginger Ale</li>
        <li>Wheat Beer</li>
        <li>Mint Julip</li>
      </ul>
+    ```
+    
+---
 
-       
+
+#Specificity quiz
+
+```css
+    li {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
+---
+
+#Specificity quiz
+
+```css
+    li#summer-drinks {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
+---
+
+#Specificity quiz
+
+```css
+    #summer-drinks li {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
 ---
 
 class: fullscreen
 
-![iOS CSS Icons](../img/cssicons.png)
+[![Simpsonscss](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/simpsons.png)](http://pattle.github.io/simpsons-in-css/)
 
-[graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
+???
+
+Med disse triksene kan man altså lage det aller meste med kun CSS.
+Som han kisen her, som har laget de fleste folka fra Simpsons.
+
+DEMO
 
 ---
 
 class: fullscreen
 
-![Opera Logo](../img/opera.png)
+![Opera Logo](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/opera.png)
 
 [v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
+
+???
+
+Men som alltid er vi noe begrenset av nettleserstøtte.
+
+LOOKING AT YOU INTERNET EXPLORER!
 
 ---
 
