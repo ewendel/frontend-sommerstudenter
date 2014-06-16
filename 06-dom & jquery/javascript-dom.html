@@ -47,7 +47,7 @@ Ok - så vi bruker javascript til å skape dynamisk oppførsel på nettsidene v�
       <title>All About Cats</title>
       <style type="text/css">
        h1 {
-         color: red; 
+         color: red;
        }
       #mainpicture {
         border: 1px solid black;
@@ -55,7 +55,7 @@ Ok - så vi bruker javascript til å skape dynamisk oppførsel på nettsidene v�
       .catname {
         font-weight: bold;
       }
-      </style>     
+      </style>
      </head>
      <body>
       <h1>CATS!</h1>
@@ -112,7 +112,7 @@ dette vil returnere en liste
 HTML5 åpner for flere nyttige aksessmetoder.
 
 Tilgjengelig in IE9+, FF3.6+, Chrome 17+, Safari 5+:
-    
+
     document.getElementsByClassName(className);
 
     var catNames = document.getElementsByClassName('catname'); // array
@@ -120,7 +120,7 @@ Tilgjengelig in IE9+, FF3.6+, Chrome 17+, Safari 5+:
 Tilgjengelig i IE8+, FF3.6+, Chrome 17+, Safari 5+:
 
     document.querySelector(cssQuery); // returnerer første eller null
-    
+
     document.querySelectorAll(cssQuery); // alle
     var catNames = document.querySelectorAll('ul li.catname'); // array
 
@@ -129,7 +129,7 @@ Tilgjengelig i IE8+, FF3.6+, Chrome 17+, Safari 5+:
 # DOM: Attributter
 
 Vi kan endre attributter hos DOM-noder med dot-notasjon.
-    
+
     <img id="mainpicture" src="http://placekitten.com/200/300">
 
 Endre "src"-attributten:
@@ -142,7 +142,7 @@ Alternativt:
     img.setAttribute('src', 'http://placekitten.com/100/500');
 
 Sette css-klasser:
-    
+
     var oldClasses = img.className;
     img.className = oldClasses + " picture";
 
@@ -151,11 +151,11 @@ Sette css-klasser:
 # DOM: Styling
 
 Endring av stilregler på DOM-noder:
-    
+
     body {
       color: red;
     }
-    
+
     var pageNode = document.getElementsByTagName('body')[0];
     pageNode.style.color = 'red';
 
@@ -163,7 +163,7 @@ Noen regler:
 
 1) CSS-egenskaper med bindestrek må camelcases<br>
 2) CSS-egenskaper med tallverdier må ha en enhet
-    
+
     body {
       background-color: pink;
       padding-top: 10px;
@@ -279,7 +279,7 @@ JS tilbyr et objekt [window](https://developer.mozilla.org/en-US/docs/Web/API/Wi
 
 window er også (som regel) det globale objektet:
 
-    window.alert("Hi!"); 
+    window.alert("Hi!");
     alert("Hi");    // same same
     this.alert("Hi!") // but different
 
@@ -292,7 +292,7 @@ For å kalle en funksjon etter en delay:
     window.setTimeout(callbackFunction, delayMilliseconds);
 
 For å kalle en funksjon gjentatte ganger hvert X-te ms:
-    
+
     window.setInterval(callbackFunction, delayMilliseconds);
 
 Eksempel:
@@ -324,7 +324,7 @@ setInterval og setTimeout returnerer en referanse som kan brukes til å stoppe u
     var img = document.getElementsByTagName('img')[0];
     img.style.opacity = 1.0;
     function fadeAway() {
-      
+
       img.style.opacity = img.style.opacity - .1;
       if (img.style.opacity < .5) {
         window.clearInterval(fadeTimer);
@@ -374,7 +374,7 @@ Selektere elementer
     document.querySelectorAll('.container .link a')
 
 
-    // jQuery 
+    // jQuery
     $('h1') // element
     $('.container') // class
     $('#main-button') // id
@@ -393,7 +393,7 @@ Endre tekst
         headings[i].textContent = "Ny tittel!";
     }
 
-    // jQuery 
+    // jQuery
     $("h1").text("Ny tittel!")
 
 ---
@@ -414,7 +414,7 @@ Lytte på klikk
     // jQuery
     $("h1").click(function(e) {
       $(this).text(header.text() + "!");
-    });    
+    });
 
 ---
 
@@ -493,9 +493,9 @@ Ethvert kall til $ returnerer et nytt jQuery-objekt, som muliggjør å koble sam
     $(selektor).width(); // Finne bredden på element
 
     $(document).ready(function() { // Kjøre kode når siden er ferdig lastet
-        myAwesomeFunction(); 
-    }); 
-      
+        myAwesomeFunction();
+    });
+
 
     console.log("Hello World!"); // Skrive til konsollet
 
@@ -520,7 +520,7 @@ class: yellow
 class: yellow
 
 # Oppgave
-  
+
   ## Bruk alt du har lært til nå til å lage et slide-show
 
   ## 05-javascript/del2/oppgave/
@@ -534,7 +534,7 @@ class: yellow
 class: yellow
 
 # Oppgave
-  
+
   ## 1) Lag et bildegalleri, explained
 
   ## 05-javascript/del2/oppgave/
@@ -551,7 +551,7 @@ class: yellow
 class: yellow
 
 # Oppgave
-  
+
   ## 2) Hvis tid: bytte bilde ved hjelp av knappene
 
   * Lag metoder for å bytte til neste/forrige bilde umiddelbart
@@ -564,7 +564,7 @@ class: yellow
 
 class: middle center yellow
 
-# <a href="../07-moderne javascript/moderne javascript.html">Neste del</a>
+# <a href="../07-mer javascript/mer javascript.html">Neste del</a>
 
     </textarea>
     <script src="http://gnab.github.com/remark/downloads/remark-0.5.3.min.js" type="text/javascript"></script>
