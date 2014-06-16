@@ -32,12 +32,11 @@
       .css-example .pbox {width:100px;height:100px;line-height: 2;text-align: center;font-size: 3em}
       .css-example .pbox:nth-child(2) {color:red;}
       .css-example .pbox:nth-child(3) {color:white;}
-      .css-example-clear:after, .group:after {
-		   content: "";
+      .css-eaxample-clear:after, .group:after {
+		   content: ".";
 		   visibility: hidden;
 		   height: 0;
 		   display: block;
-		   clear: both;
 		}
 
 		.specificity {display:inline-block;}
@@ -230,6 +229,17 @@ class: middle fullscreen
 &nbsp;
 
 [https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors](https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors)
+
+---
+
+class: middle center
+
+![devtools](../img/devtools.jpg)
+
+???
+
+Vise hvordan man se hvilke selectors som matcher et visst element, og at man kan flikke dem av og på.
+Kort og enkel demo.
 
 ---
 
@@ -491,6 +501,8 @@ En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig 
 </div>
 
 
+
+
 ---
 class: whitebg
 
@@ -538,7 +550,7 @@ class: whitebg
         visibility: hidden; 
         display: block; 
         height: 0; 
-        clear: both
+        clear: both;
     }
 
     article {margin-right: 10px; float:left}   
@@ -548,6 +560,10 @@ class: whitebg
 <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
 <div style="padding:20px; background: #f5dcdc; margin-right: 10px; float:left">&lt article/ &gt;</div>
 </div>
+
+<br><br><br><br>
+
+.center[![devtools](../img/devtools-small.jpg)]
 
 <!-- 
 
@@ -704,6 +720,17 @@ class: middle center
 
 ![devtools](../img/devtools.jpg)
 
+???
+
+Vis www.db.no og vis hvordan de bruker posisjonering på forskjellige elementer.
+
+TIPS OSS - absolute
+
+Søkeboks - absolute
+
+Menyelementer (float left og right)
+
+Dagbladet-meny på topp etter scroll (fixed)
 ---
 
 class: middle fullscreen
@@ -717,6 +744,11 @@ class: middle fullscreen
 <div class="source">
 http://4.bp.blogspot.com/_98lRv3X-wZ0/S6oqqpjJqmI/AAAAAAAAADI/a8Es6Lc_hes/s1600/funny-cat-fight.jpg
 </div>
+
+
+???
+
+Hva mener jeg med "sloss om samme element"?
 
 ---
 class: middle
@@ -1108,7 +1140,7 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
 class: middle
 
 #4. Fortsatt uavgjort?
-## Flere likt vekta selektorer fra samme sted?
+## Flere likt vektede selektorer fra samme sted?
 
 ---
 
@@ -1118,36 +1150,109 @@ class: middle
 
 ---
 
-
 #Specificity quiz
 
-    ul#summer-drinks li {
-      font-weight: normal;
-      font-size: 12px;
+```css
+    li {
       color: black;
     } 
 
-    .favorite {
+    li {
       color: red;
-      font-weight: bold;
     }
+    ```
 
 &nbsp;    
-
+```html
      <ul id="summer-drinks">
        <li class="favorite">Whiskey and Ginger Ale</li>
        <li>Wheat Beer</li>
        <li>Mint Julip</li>
      </ul>
+    ```
+    
+---
 
-       
+
+#Specificity quiz
+
+```css
+    li {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
+---
+
+#Specificity quiz
+
+```css
+    li#summer-drinks {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
+---
+
+#Specificity quiz
+
+```css
+    #summer-drinks li {
+      color: black;
+    } 
+
+    .favorite {
+      color: red;
+    }
+    ```
+
+&nbsp;    
+```html
+     <ul id="summer-drinks">
+       <li class="favorite">Whiskey and Ginger Ale</li>
+       <li>Wheat Beer</li>
+       <li>Mint Julip</li>
+     </ul>
+    ```
+
 ---
 
 class: fullscreen
 
-![iOS CSS Icons](../img/cssicons.png)
+[![Simpsonscss](../img/simpsons.png)](http://pattle.github.io/simpsons-in-css/)
 
-[graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
+???
+
+Med disse triksene kan man altså lage det aller meste med kun CSS.
+Som han kisen her, som har laget de fleste folka fra Simpsons.
+
+DEMO
 
 ---
 
@@ -1156,6 +1261,12 @@ class: fullscreen
 ![Opera Logo](../img/opera.png)
 
 [v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
+
+???
+
+Men som alltid er vi noe begrenset av nettleserstøtte.
+
+LOOKING AT YOU INTERNET EXPLORER!
 
 ---
 
