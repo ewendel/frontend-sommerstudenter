@@ -16,9 +16,16 @@
   <body>
     <textarea id="source">
 
-class: middle center yellow
+class: fullscreen
 
-# JavaScript med AJAX
+![CSS](../img/ajax.png)
+
+<div class="overlay loud" style="text-align: center; top: 70%">
+<p>
+    JavaScript med AJAX
+    <small style="display:block;">Del 7: mer javascript</small>
+</p>
+</div>
 
 ---
 
@@ -95,6 +102,55 @@ Ajax med jQuery:
 
 ---
 
+# AJAX - utvekslingsformat
+
+## JSON: JavaScript Object Notation
+
+    // Server returnerer følgende (som en streng)
+    '{data: [{navn: "Kent", alder: 28}, {navn: "Erik", alder: 26}]}'
+
+    //JavaScript konverterer det til et objekt:
+    {
+        data: [
+        {
+            navn: "Kent",
+            alder: 28
+        },
+        {
+            navn: "Erik",
+            alder: 26
+        }]
+    }
+
+---
+
+
+# AJAX - utvekslingsformat
+
+## JSON: JavaScript Object Notation
+
+    // Server returnerer følgende (som en streng)
+    '{data: [{navn: "Kent", alder: 28}, {navn: "Erik", alder: 26}]}'
+
+    //JavaScript konverterer det til et objekt:
+    {
+        data: [
+        {
+            navn: "Kent",
+            alder: 28
+        },
+        {
+            navn: "Erik",
+            alder: 26
+        }]
+    }
+
+### Under huden
+
+    JSON.parse('{data: [{navn: "Kent", alder: 28}, {navn: "Erik", alder: 26}]}')
+
+---
+
 class: middle center
 
 #Same origin policy
@@ -110,7 +166,7 @@ class: middle center
 * Samme domene
 * Samme protokoll
 * Samme port
-* Samme host 
+* Samme host
 
 ---
 
@@ -127,24 +183,15 @@ JSONP
 
 ---
 
-# Workaround
+#AJAX
 
-## JSON: JavaScript Object Notation
+## Vanlig AJAX
 
-    // Server returnerer følgende (som en streng)
-    '{data: [{navn: "Helge", alder: 29}, {navn: "Erik", alder: 26}]}'
-
-    //JavaScript konverterer det til et objekt:
+    // JSON
     {
-        data: [
-        {
-            navn: "Helge", 
-            alder: 29
-        }, 
-        {
-            navn: "Erik", 
-            alder: 26
-        }]
+        "Name": "Foo",
+        "Id": 1234,
+        "Rank": 7
     }
 
 ---
@@ -158,41 +205,28 @@ JSONP
         "Name": "Foo",
         "Id": 1234,
         "Rank": 7
-    }      
-
----
-
-#AJAX
-
-## Vanlig AJAX
-
-    // JSON
-    {
-        "Name": "Foo",
-        "Id": 1234,
-        "Rank": 7
-    }    
+    }
 
 ## JSONP
 
     // JSONP
-    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});    
+    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});
 
 ---
 
 #AJAX
 
 ## JSONP med jQuery
- 
+
     $.ajax({
-        dataType: "jsonp", 
-        url: "http://www.bekk.no/api?jsoncallback=?", 
+        dataType: "jsonp",
+        url: "http://www.bekk.no/api?jsoncallback=?",
         success: function(res) {
             console.log(res);
         },
         error: function() {
             console.log("Sorry, an error occured.");
-        }    
+        }
     });
 
 ---
@@ -200,16 +234,16 @@ JSONP
 #AJAX
 
 ## JSONP med jQuery
- 
+
     $.ajax({
-        dataType: "jsonp", 
-        url: "http://www.bekk.no/api?jsoncallback=?", 
+        dataType: "jsonp",
+        url: "http://www.bekk.no/api?jsoncallback=?",
         success: function(res) {
             console.log(res);
         },
         error: function() {
             console.log("Sorry, an error occured.");
-        }    
+        }
     });
 
 ### URL erstattes med
@@ -224,7 +258,7 @@ JSONP
 Script-taggen kan hente javascript fra andre domener
 
     script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript'; 
+    script.type = 'text/javascript';
     script.src = url + "jsoncallback=minCallback";
 
 ---
@@ -236,14 +270,14 @@ Script-taggen kan hente javascript fra andre domener
 Script-taggen kan hente javascript fra andre domener
 
     script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript'; 
+    script.type = 'text/javascript';
     script.src = url + "jsoncallback=minCallback";
 
 Vi lager en funksjon som heter minCallback:
 
     var minCallback = function(response) {
         // Gjør noe gøy!
-    }; 
+    };
 
 ---
 
@@ -254,14 +288,14 @@ Vi lager en funksjon som heter minCallback:
 Script-taggen kan hente javascript fra andre domener
 
     script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript'; 
+    script.type = 'text/javascript';
     script.src = url + "jsoncallback=minCallback";
 
 Vi lager en funksjon som heter minCallback:
 
     var minCallback = function(response) {
         // Gjør noe gøy!
-    }; 
+    };
 
 Når responsen kommer, evalueres responsen:
 
@@ -285,14 +319,14 @@ class: middle center
 
 #Oppgaver
 
-##Lag en bilde-stripe med bilder fra Flickr!
+##Fortsett på bildekarusellen, men last bildene via ajax!
 
-1. Gjør et kall mot Flickr. Logg ut responsen.
-2. Lag et nytt **MyImage**-objekt for hvert bilde i responsen. Lagre bildene i **images**-arrayet.
-3. Bygg en HTML-streng (bildestripe) basert på bildene i arrayet.
-4. Sett HTML-strengen inn i DOM-elementet med **id="thumbs"** inni **el** som sendes inn til **startImageGallery()**
+1. Gjør et kall mot **sommer2014.herokuapp.com**, logg responsen.
+2. Bygg en HTML-streng (bildestripe) basert på bildene i arrayet.
+3. Sett HTML-strengen inn i DOM-elementet med **class="image-gallery"**
+4. **slideShow()**
 
-Prøv å løse oppgaven uten å se på [løsningsforslaget](losning/index.html)
+Prøv å løse oppgaven uten å se på [løsningsforslaget](løsningsforslag/bildegalleri-løsning.html)
 
 ---
 
