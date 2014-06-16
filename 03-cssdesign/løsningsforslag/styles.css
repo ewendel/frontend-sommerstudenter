@@ -1,3 +1,25 @@
+.container { 
+    padding: 40px 0px 0px;
+    margin-top: 40px;
+}
+
+.menu-element { 
+    width: 12.25%;
+}
+
+.menu-element-home {
+    width: 8%;
+}
+
+.menu-element-contact {
+    width: 18.50%;
+}
+
+header { margin-bottom: 20px; }
+
+
+
+
 @import url(http://fonts.googleapis.com/css?family=Port+Lligat+Slab);
 
 /* Oppgave 1: Gi riktig utseende til teksten "En alpinist gjenopplivde en sebra..."  */
@@ -44,14 +66,6 @@
 }
 
 /* 3) Gi riktig utseende til selve siden */
-
-/* Generell oppstramming */
-
-.container {
-    width: 960px;
-    margin: 0 auto;
-    position: relative;
-}
 
 .page {
     background: url('../../mockup/grafikk/grid_noise.png');
