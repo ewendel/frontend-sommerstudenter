@@ -58,14 +58,33 @@ blockquote { font-style: italic; font-weight: 300; }
 .remark-slide-content.fullscreen.higher img {height:115% !important;max-height:115%;}
 .remark-slide-content.fullscreen .overlay {position:absolute;left:0;right:0;top:35%;z-index:999;background:rgba(0,0,0,.75);}
 
+.whitebg {background: #fff;color:#000;}
+.hl-text {background:#000;color: #FD5158; text-transform:uppercase;font-weight: normal;font-size: 1.5em;}
+.fullscreen {position: relative;}
+.fullscreen img {width:100%; min-height:100%; height:auto; top:0 !important;}
+.fullscreen.higher img {height:115% !important;max-height:115%;}
+.fullscreen .overlay {position:absolute;left:0;right:0;top:35%;z-index:999;background:rgba(0,0,0,.75);}
+.whitebg .hl-text {
+  padding: .25em;
+}
+.slide .source {position: absolute;bottom:3px; left:5px;z-index:999;font-size:.7em;}
+.loud {font-size:2em;}
+
+blockquote, .loud {font-size:2em;}
+blockquote cite, .loud small {font-size:.7em;color:#FD5158;}
+.slide .overlay h1 > span {background:transparent !important;}
+.slide .overlay h1:before {border-top:none !important;}
+
+.overlay {position:absolute;left:0;right:0;top:75%;z-index:999;background:rgba(0,0,0,.75);}
+
 .overlay h1 {
-        padding: 20px;
-        top: 77%; 
-        font-size: 50px;
-        font-family: 'Dosis';
-        color: #FD5158;
-        text-align: center;
-        text-transform: uppercase;
+  padding: 20px;
+  top: 77%; 
+  font-size: 50px;
+  font-family: 'Dosis';
+  color: #FD5158;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .halfsized img {
