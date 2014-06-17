@@ -59,11 +59,11 @@ Typografi
 
 Farger
 
-Gradients  
+Gradients
 
 Skygger
 
-Transforms 
+Transforms
 
 Transitions
 
@@ -133,7 +133,7 @@ Læren om fonter
     /* Uthevet */
     .selector {
       font-weight: bold;
-    } 
+    }
 
 ---
 
@@ -141,14 +141,14 @@ Læren om fonter
 
     /* Kursiv */
     .selector {
-      font-style: italic; 
+      font-style: italic;
     }
 
 --
     /* Understreking */
     .selector {
       text-decoration: underline;
-      /* border-bottom: 1px solid #333 */  
+      /* border-bottom: 1px solid #333 */
     }
 
 --
@@ -160,15 +160,15 @@ Læren om fonter
 --
     /* VERSALER */
     .selector {
-      text-transform: uppercase; 
+      text-transform: uppercase;
     }
 
 --
 
     /* tilstand */
     .selector:hover {
-      color: red; 
-      text-decoration: underline; 
+      color: red;
+      text-decoration: underline;
     }
 
 
@@ -214,7 +214,7 @@ class: fullscreen
 
 class: fullscreen
 
-![Eg2](https://raw.githubusercontent.com/ewendel/frontend-sommerstudenter/master/img/fonts4.png)
+![Eg2](https://raw.githubusercontent.com/ewendel/frontend-bilder/master/img/fonts4.png)
 
 ---
 
@@ -227,7 +227,7 @@ class: fullscreen
 # Web-fonter
 
 1a. Importer font via CSS:
-   
+
     @font-face {
       font-family: 'Snowburst One';
       font-style: normal;
@@ -241,7 +241,7 @@ class: fullscreen
         href='http://fonts.googleapis.com/css?family=SnowburstOne'>
 
 2\. Bruk fonten:
-   
+
     body {
         font-family: "Snowburst One", Helvetica, Arial, sans-serif;
     }
@@ -273,10 +273,10 @@ class: fullscreen
 ---
 
 # Farger
-   
+
     /* Farge på tekst */
     .selector-a {
-      color: #000000; 
+      color: #000000;
     }
 
 --
@@ -288,16 +288,28 @@ class: fullscreen
 --
 
     .selector-c {
-      color: rgba(0, 0, 0, 0.5); 
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+--
+
+    .selector-d {
+      color: hsl(210,100%,50%);
+    }
+
+--
+
+    .selector-e {
+      color: hsla(240,100%,50%,0.05);
     }
 
 ---
 
 #Farger
-    
+
     /* Bakgrunnsfarge */
     .selector {
-      background-color: blue; 
+      background-color: blue;
     }
 
     /* Bakgrunnsbilde */
@@ -306,10 +318,6 @@ class: fullscreen
       background-repeat: repeat-x;
       background-position: top center; /* eller koordinater: x y */
     }
-
-???
-
-heihei
 
 ---
 
@@ -322,9 +330,9 @@ Mer fleksibelt enn bakgrunnsbilder
 ---
 
 # CSS Gradients
-   
+
     /* fallback */
-    background-color:#063053;
+    background-color: #063053;
 
     /* Gradient */
     background-image: linear-gradient(red, green, blue, purple, orange);
@@ -332,7 +340,7 @@ Mer fleksibelt enn bakgrunnsbilder
 ---
 
 # CSS Gradients
-   
+
     /* fallback */
     background-color: #063053;
 
@@ -361,7 +369,7 @@ Mer fleksibelt enn bakgrunnsbilder
 ---
 
 # CSS Gradients
-   
+
    ```html
     <!--[if lt IE 10]>
         <style>
@@ -378,7 +386,10 @@ Mer fleksibelt enn bakgrunnsbilder
 
         </style>
     <![endif]-->
-    ``
+    ```
+--
+Støttes ikke av IE9 <
+
 ---
 
 class: fullscreen
@@ -428,12 +439,12 @@ class: middle center
 
 Endre koordinater utenom flyten, i 2D og 3D.
 
-Sandkasse: http://jsbin.com/ugiper/7/edit
+Sandkasse: http://jsbin.com/wokub/2/edit
 
 ---
 
 # CSS Transforms
-   
+
     /*
      * Øk størrelsen på elementer med klassen "foo" 2x,
      * langs både X- og Y-aksen.
@@ -452,7 +463,7 @@ Sandkasse: http://jsbin.com/ugiper/7/edit
 ---
 
 # CSS Transforms
-   
+
     /*
      * Øk størrelsen på elementer med klassen "foo" 2x,
      * langs både X- og Y-aksen.
@@ -485,10 +496,12 @@ Man må i virkeligheten ha med vendor-prefix, pga nettleserkompabilitet
 class: middle center imgtranslate
 
 ![Icomoon](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/typekit.png)
-   
+
     img { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
-
+<style>
+  img[alt=Icomoon] { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+</style>
 ---
 
 class: fullscreen caniuse
@@ -498,7 +511,7 @@ class: fullscreen caniuse
 ---
 
 # CSS Transforms
-   
+
     .foo {
 
         /* Flytt langs x/y. */
@@ -546,7 +559,7 @@ Overgang mellom stiler, med implisitt animasjon.
 class: anim
 
 # CSS Transitions
-   
+
     a {
         color:#fd5158;
         transition: color 100ms ease-in-out;
@@ -556,12 +569,12 @@ class: anim
         color:#fff;
     }
 
-Demo: http://jsbin.com/ugiper/11/edit
+Demo: http://jsbin.com/cayotu/1/edit
 
 ---
 
 # CSS Transitions
-   
+
     .foo {
         /* hva som skal animeres */
         transition-property: none;
@@ -597,17 +610,22 @@ Demo: http://jsbin.com/ugiper/11/edit
 
 class: middle center imganim
 
-![Icomoon](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/typekit.png)
-   
+![Icomoon2](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/typekit.png)
+
     img { transition: transform 300ms ease-in-out; }
     img:hover { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
----
+<style type="text/css">
+    img[alt="Icomoon2"] { -webkit-transition: -webkit-transform 300ms ease-in-out; }
+    img[alt="Icomoon2"]:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+</style>
+
+???
 
 # CSS3
 
 &nbsp;
-## Les mer på nettet: 
+## Les mer på nettet:
 * http://ww3files.com/
 
 ---
@@ -631,7 +649,7 @@ class: yellow
 
 # Oppgave
 
-## 1) Gi riktig utseende til teksten "En alpinist gjenopplivde en sebra..." 
+## 1) Gi riktig utseende til teksten "En alpinist gjenopplivde en sebra..."
 
 Skriftstørrelse
 
@@ -649,7 +667,7 @@ Stiplet understreking på lenken
 
 class: yellow
 
-# Oppgave 
+# Oppgave
 
 ## 2) Style typografien under "Våre tjenester"
 
@@ -665,13 +683,13 @@ Farge
 
 class: yellow
 
-# Oppgave 
+# Oppgave
 
 ## 3) Gi riktig utseende til selve siden
 
 Hvit bakgrunn + bakgrunnsbilde på innholdet
 
-Grå bakgrunn på resten 
+Grå bakgrunn på resten
 
 Skygge på innholdet
 
