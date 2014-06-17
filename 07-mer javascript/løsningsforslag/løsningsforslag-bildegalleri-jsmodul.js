@@ -29,7 +29,6 @@ var SlideShow = (function() {
     },
 
     nextSlide: function(callback) {
-      console.log("her")
       var current = this.$el.find('.show');
       var next = current.next().is('img') ? current.next() : current.parent().find('img:first');
       current.hide().removeClass('show');
@@ -56,8 +55,6 @@ var SlideShow = (function() {
       this.render();
       this.startSlideShow();
     }
-
-
   });
 
   return SlideShow;
