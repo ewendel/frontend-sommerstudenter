@@ -394,7 +394,7 @@ Når noe er instansiert, vil this (nesten) alltid være instansen av objektet
     };
 
     var pat = new Person("Pat", "postmann", "Posten");
-    var pat.langNese = false;
+    pat.langNese // true
 
 
 ---
@@ -413,7 +413,7 @@ Når noe er instansiert, vil this (nesten) alltid være instansen av objektet
     };
 
     var pat = new Person("Pat", "postmann", "Posten");
-    var pat.langNese = false;
+    pat.langNese // true
 
 Alt på this er public metoder
 
@@ -466,7 +466,7 @@ class: yellow
 
 1. Bygg om bildekarusellen til en JS modul.
 2. Hent data utenfor modulen og send den inn via en public metode.
-3. **Hvis tid:** se på [jQuery deferred](http://api.jquery.com/category/deferred-object/) og prøv å implementere render-triggering med promises.
+3. **Hvis tid:** se på [jQuery deferred](http://api.jquery.com/category/deferred-object/) og prøv å implementere oppstart med promises.
 
 Prøv å løse oppgaven uten å se på [løsningsforslaget](løsningsforslag/bildegalleri-løsning-jsmodul.html)
 
