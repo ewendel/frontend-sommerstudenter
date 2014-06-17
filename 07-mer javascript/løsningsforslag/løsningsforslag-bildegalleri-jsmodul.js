@@ -28,26 +28,22 @@ var SlideShow = (function() {
         .find("img:first").addClass("show");
     },
 
-    nextSlide: function(callback) {
+    nextSlide: function() {
       var current = this.$el.find('.show');
       var next = current.next().is('img') ? current.next() : current.parent().find('img:first');
       current.hide().removeClass('show');
       current.fadeOut('slow', function() {
         next.fadeIn('slow').addClass('show');
-        callback && callback.call(this);
       });
     },
 
     startSlideShow: function() {
-      var nextSlide = this.nextSlide.bind(this);
-
-      nextSlide(function() {
-        this.timeId = setTimeout(nextSlide, 5000);
-      });
+      this.nextSlide();
+      this.intervalId = setInterval(this.nextSlide.bind(this), 5000);
     },
 
     stopSlideShow: function() {
-      clearTimeout(this.timeId);
+      clearInterval(this.intervalId);
     },
 
     dataLoadedHandler: function(data) {
