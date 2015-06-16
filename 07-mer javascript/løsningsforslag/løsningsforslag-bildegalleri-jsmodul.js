@@ -57,15 +57,15 @@ var SlideShow = (function() {
 })();
 
 
-var url = "http://localhost:1339/";
-var imgDeffere = $.ajax({
-  dataType: "jsonp",
+var url = "http://localhost:1339";
+var imgDeffered = $.ajax({
+  method: 'GET',
   url: url
 });
 
 var slideShow = new SlideShow({
   el: ".image-gallery",
-  data: imgDeffere
+  data: imgDeffered
 });
 
 
