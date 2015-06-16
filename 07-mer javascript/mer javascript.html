@@ -60,9 +60,45 @@ Send og motta data i bakgrunnen
 
 ---
 
-class: middle center
+# Using XMLHttpRequest
 
-[![devtools](https://raw.githubusercontent.com/ewendel/frontend--bilder/master/devtools.jpg)](http://jsbin.com/nepati/3/edit)
+```javascript
+function reqListener () {
+  console.log(this.responseText);
+}
+
+var request = new XMLHttpRequest();
+
+request.onload = reqListener;
+
+request.open("get", "yourFile.txt", true);
+
+request.send();
+```
+
+Fra Mozilla Developer Network (mdn)
+
+---
+
+# Using XMLHttpRequest...
+
+```javascript
+var httpRequest;
+
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+  httpRequest = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+  try {
+    httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+  }
+  catch (e) {
+    try {
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    catch (e) {}
+  }
+}
+```
 
 ---
 
@@ -171,143 +207,6 @@ class: middle center
 ---
 
 class: middle center
-#Workaround
-
-&nbsp;
-
----
-class: middle center
-#Workaround
-
-JSONP
-
----
-
-#AJAX
-
-## Vanlig AJAX
-
-    // JSON
-    {
-        "Name": "Foo",
-        "Id": 1234,
-        "Rank": 7
-    }
-
----
-
-#AJAX
-
-## Vanlig AJAX
-
-    // JSON
-    {
-        "Name": "Foo",
-        "Id": 1234,
-        "Rank": 7
-    }
-
-## JSONP
-
-    // JSONP
-    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});
-
----
-
-#AJAX
-
-## JSONP med jQuery
-
-    $.ajax({
-        dataType: "jsonp",
-        url: "http://www.bekk.no/api?jsoncallback=?",
-        success: function(res) {
-            console.log(res);
-        },
-        error: function() {
-            console.log("Sorry, an error occured.");
-        }
-    });
-
----
-
-#AJAX
-
-## JSONP med jQuery
-
-    $.ajax({
-        dataType: "jsonp",
-        url: "http://www.bekk.no/api?jsoncallback=?",
-        success: function(res) {
-            console.log(res);
-        },
-        error: function() {
-            console.log("Sorry, an error occured.");
-        }
-    });
-
-### URL erstattes med
-    http://www.bekk.no/api?jsoncallback=jQuery18005757881309741956_1363111010831&_=1363111010857
-
----
-
-#AJAX
-
-##JSONP forklart
-
-Script-taggen kan hente javascript fra andre domener
-
-    script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript';
-    script.src = url + "jsoncallback=minCallback";
-
----
-
-#AJAX
-
-##JSONP forklart
-
-Script-taggen kan hente javascript fra andre domener
-
-    script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript';
-    script.src = url + "jsoncallback=minCallback";
-
-Vi lager en funksjon som heter minCallback:
-
-    var minCallback = function(response) {
-        // Gjør noe gøy!
-    };
-
----
-
-#AJAX
-
-##JSONP forklart
-
-Script-taggen kan hente javascript fra andre domener
-
-    script = document.createElement('script'); // Lager en script-node
-    script.type = 'text/javascript';
-    script.src = url + "jsoncallback=minCallback";
-
-Vi lager en funksjon som heter minCallback:
-
-    var minCallback = function(response) {
-        // Gjør noe gøy!
-    };
-
-Når responsen kommer, evalueres responsen:
-
-    minCallback({"Name": "Foo", "Id": 1234, "Rank": 7});
-
----
-
-#AJAX
-
-##Oops!
-
-    minCallback(alert("Watch out! Your computer will be hacked!"))
 
 ---
 
@@ -317,7 +216,7 @@ class: yellow
 
 ##Fortsett på bildekarusellen, men last bildene via ajax!
 
-1. Gjør et kall mot **sommer2014.herokuapp.com**, logg responsen.
+1. Gjør et kall mot **sommer2015.herokuapp.com**, logg responsen.
 2. Bygg en HTML-streng (bildestripe) basert på bildene i arrayet.
 3. Sett HTML-strengen inn i DOM-elementet med **class="image-gallery"**
 4. **slideShow()**

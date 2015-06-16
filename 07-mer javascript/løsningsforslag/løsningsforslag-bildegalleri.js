@@ -10,10 +10,9 @@ function slideShow() {
   setTimeout(slideShow, 5000);
 }
 
-var url = "http://sommer2014.herokuapp.com/";
+var url = "http://sommer2015.herokuapp.com/";
 
 $.ajax({
-  dataType: "jsonp",
   url: url,
   success: function(response) {
     var html = $.map(response.images, function(img) {

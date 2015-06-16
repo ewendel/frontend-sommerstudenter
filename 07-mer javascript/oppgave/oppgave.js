@@ -13,8 +13,8 @@ function slideShow() {
 
 slideShow();
 
-// last bilder med jsonp fra sommer2014 api-et
-var url = "http://sommer2014.herokuapp.com/";
+// last bilder med jsonp fra sommer2015 api-et
+var url = "http://sommer2015.herokuapp.com/";
 $.ajax({
 
 });

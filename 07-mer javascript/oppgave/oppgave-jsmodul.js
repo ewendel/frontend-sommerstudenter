@@ -39,7 +39,7 @@ var slideShow = new SlideShow({
 
 
 
-var url = "http://sommer2014.herokuapp.com/";
+var url = "http://sommer2015.herokuapp.com/";
 
 $.ajax({
   dataType: "jsonp",
