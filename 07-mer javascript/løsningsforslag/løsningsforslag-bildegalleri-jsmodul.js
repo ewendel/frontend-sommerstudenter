@@ -57,7 +57,7 @@ var SlideShow = (function() {
 })();
 
 
-var url = "http://sommer2015.herokuapp.com/";
+var url = "http://localhost:1339/";
 var imgDeffere = $.ajax({
   dataType: "jsonp",
   url: url

@@ -10,13 +10,15 @@ function slideShow() {
   setTimeout(slideShow, 5000);
 }
 
-var url = "http://sommer2015.herokuapp.com/";
+var url = "http://localhost:1339/";
 
 $.ajax({
+  dataType: "jsonp",
   url: url,
   success: function(response) {
     var html = $.map(response.images, function(img) {
-        return '<img src="' + img + '" style="display:none" />';
+      
+        return '<img src="' + img.url + '" style="display:none" />';
     });
 
     $(".image-gallery")
