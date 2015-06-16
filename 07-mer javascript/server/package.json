@@ -1,0 +1,19 @@
+{
+  "name": "rest-images",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kent Andersen <kentareandersen@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.4.3",
+    "glob": "~4.0.2",
+    "cheerio": "~0.17.0",
+    "q": "~1.0.1",
+    "node-cache": "~1.0.0"
+  }
+}
