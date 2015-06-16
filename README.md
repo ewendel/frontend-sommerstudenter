@@ -41,6 +41,6 @@ Oppgave: lage et bildegalleri
 Events, Ajax, "moderne" javascript. 
 
 
-Wilcards:
+Wildcards:
   -  Ytelse i frontend
   -  Struktur i store JS-apps
